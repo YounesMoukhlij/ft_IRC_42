@@ -2,7 +2,7 @@ OBJ = ${SRC:.cpp=.o}
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = irc.cpp
 
 NAME = PmergeMe
 
