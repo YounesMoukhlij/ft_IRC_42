@@ -4,7 +4,7 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = irc.cpp
 
-NAME = irc
+NAME = ircserv
 
 
 all : ${NAME}
