@@ -10,7 +10,7 @@ NAME = irc
 all : ${NAME}
 
 
-%.o: %.cpp PmergeMe.hpp
+%.o: %.cpp irc.hpp
 	@echo "\033[30m Compiling ...\033[0m"
 	@c++ ${CPPFLAGS} -c $< -o $@
 
