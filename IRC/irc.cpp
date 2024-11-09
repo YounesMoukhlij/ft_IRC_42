@@ -11,4 +11,5 @@ int main(int argc, char **argv)
     {
         std::cerr << "Error : The program started like this ./ircserv port password !" << std::endl;
     }
+    
 }
