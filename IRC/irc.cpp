@@ -2,5 +2,7 @@
 
 int main(int argc, char **argv)
 {
-    int 
+    int i;
+
+    i = 0;
 }
