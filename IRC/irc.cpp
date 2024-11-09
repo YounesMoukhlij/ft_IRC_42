@@ -7,6 +7,6 @@ int main(int argc, char **argv)
     i = 0;
     if (argc != 4)
     {
-        std::cerr << ""
+        std::cerr << "Error : The program Takes "
     }
 }
