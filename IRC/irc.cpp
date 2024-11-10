@@ -2,16 +2,17 @@
 
 #include "header/IRC.hpp"
 
+void    signal_handler(int signal)
+{
 
+}
 
 int main(int argc, char **argv)
 {
-    int i;
-
-    i = 0;
     if (argc != 4)
     {
         std::cerr << "Error : The program started like this ./ircserv port password !" << std::endl;
+        return (EXIT_FAILURE);
     }
 	signal(SIGINT, signal_handler);
 
