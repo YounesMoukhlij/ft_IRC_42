@@ -13,7 +13,6 @@ class Server
 		std::string						_datetime;
 
 	public:
-		// Constructor & destructor
 		Server(std::string port, std::string password, std::string datetime);
 		Server();
 		~Server();
