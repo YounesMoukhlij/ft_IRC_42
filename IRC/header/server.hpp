@@ -1,0 +1,21 @@
+
+
+#pragma once
+
+#include "headers.hpp"
+
+
+class Server
+{
+	private:
+		std::string						_port;
+		std::string						_password;
+		std::string						_datetime;
+
+	public:
+		// Constructor & destructor
+		Server(std::string port, std::string password, std::string datetime);
+		Server();
+		~Server();
+};
+
