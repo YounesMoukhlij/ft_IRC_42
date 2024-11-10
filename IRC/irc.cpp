@@ -15,6 +15,8 @@ int main(int argc, char **argv)
         return (EXIT_FAILURE);
     }
 	signal(SIGINT, signal_handler);
+    
 
 
+    return (EXIT_SUCCESS);
 }
