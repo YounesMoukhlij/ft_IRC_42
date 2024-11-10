@@ -1,12 +1,8 @@
 
 
-#include "header.hpp"
+#include "header/IRC.hpp"
 
-static void	signal_handler(int signal)
-{
-	(void)signal;
-	server_shutdown = true;
-}
+
 
 int main(int argc, char **argv)
 {
