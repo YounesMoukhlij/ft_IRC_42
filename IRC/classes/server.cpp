@@ -4,5 +4,5 @@ Server::Server(std::string port, std::string password, std::string datetime)
 {
 
 }
-		ServerServer();
+		Server::Server();
 		~Server();
