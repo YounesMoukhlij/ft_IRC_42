@@ -11,7 +11,7 @@ class Server
 		std::string						_port;
 		std::string						_password;
 		std::string						_datetime;
-		int								
+		int								_socket_fd;
 
 	public:
 		Server(std::string port, std::string password);
