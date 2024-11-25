@@ -13,7 +13,7 @@ class Server
 		std::string						_datetime;
 
 	public:
-		Server(std::string port, std::string password, std::string datetime);
+		Server(std::string port, std::string password);
 		Server();
 		~Server();
 };
