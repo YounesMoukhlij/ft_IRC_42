@@ -11,6 +11,7 @@ class Server
 		std::string						_port;
 		std::string						_password;
 		std::string						_datetime;
+		
 
 	public:
 		Server(std::string port, std::string password);
