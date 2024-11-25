@@ -4,7 +4,7 @@
 
 void    signal_handler(int signal)
 {
-    
+    (void) signal;
 }
 
 int main(int argc, char **argv)
