@@ -1,6 +1,6 @@
 
 
-Server(std::string port, std::string password, std::string datetime)
+ServerServer(std::string port, std::string password, std::string datetime)
 {
 
 }
