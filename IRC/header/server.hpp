@@ -13,6 +13,8 @@ class Server
 		std::string						_datetime;
 		int								_socket_fd;
 
+		
+
 	public:
 		~Server();
 		startServer();
