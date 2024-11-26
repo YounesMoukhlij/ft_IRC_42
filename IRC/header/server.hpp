@@ -15,7 +15,7 @@ class Server
 		int 							_domain;
 		int 							_type;
 		int 							_protocol;
-		int								
+
 
 
 	public:
