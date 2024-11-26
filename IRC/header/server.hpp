@@ -12,7 +12,7 @@ class Server
 		std::string						_password;
 		std::string						_datetime;
 		int								_socket_fd;
-		_domain
+		int
 
 
 	public:
