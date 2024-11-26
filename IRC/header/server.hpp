@@ -14,7 +14,8 @@ class Server
 		int								_socket_fd;
 
 	public:
-		Server(std::string port, std::string password);
 		~Server();
+		init
+		Server(std::string port, std::string password);
 };
 
