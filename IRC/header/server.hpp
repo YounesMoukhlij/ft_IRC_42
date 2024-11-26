@@ -28,7 +28,8 @@ class Server
 
 Server::startServer()
 {
-	_socket_fd = socket()
+	_socket_fd = socket(_domain, _type, _protocol);
+	if ()
 }
 
 Server::setSocketParameter()
