@@ -30,8 +30,8 @@ Server::startServer()
 
 Server::setSocketParameter()
 {
-	_hints.ai_family = AF_INET;		  // We choose Ipv4
-	_hints.ai_socktype = SOCK_STREAM; // We choose to work with TCP stream sockets
-	_hints.ai_flags = AI_PASSIVE;
+	ai_family = AF_INET;		  // We choose Ipv4
+	ai_socktype = SOCK_STREAM; // We choose to work with TCP stream sockets
+	ai_flags = AI_PASSIVE;
 }
 
