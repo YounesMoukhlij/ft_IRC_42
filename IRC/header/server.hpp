@@ -15,7 +15,7 @@ class Server
 
 	public:
 		~Server();
-		startServer()
+		startServer();
 		Server(std::string port, std::string password);
 };
 
