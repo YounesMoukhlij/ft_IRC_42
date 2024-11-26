@@ -19,6 +19,8 @@ class Server
 		setSocketParameter();
 		Server(std::string port, std::string password);
 };
+
+
 Server::startServer()
 {
 
