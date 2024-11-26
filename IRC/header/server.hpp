@@ -25,4 +25,5 @@ Server::startServer()
 {
 
 }
+		Server::setSocketParameter();
 
