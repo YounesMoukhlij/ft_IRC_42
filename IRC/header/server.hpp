@@ -28,7 +28,7 @@ class Server
 
 Server::startServer()
 {
-	_socket_fd = 
+	_socket_fd = socket()
 }
 
 Server::setSocketParameter()
