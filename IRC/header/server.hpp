@@ -13,9 +13,6 @@ class Server
 		std::string						_datetime;
 		int								_socket_fd;
 		struct addrinfo					_params;
-		int 							_domain;
-		int 							_type;
-		int 							_protocol;
 
 
 
