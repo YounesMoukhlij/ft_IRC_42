@@ -16,7 +16,7 @@ class Server
 	public:
 		~Server();
 		startServer();
-		
+		setParamet
 		Server(std::string port, std::string password);
 };
 
