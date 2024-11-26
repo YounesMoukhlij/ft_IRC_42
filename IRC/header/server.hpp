@@ -36,7 +36,7 @@ Server::startServer()
 
 Server::setSocketParameter()
 {
-	_domain = AF_INET;  // We choose Ipv4
+	params->_domain = AF_INET;  // We choose Ipv4
 	_type = SOCK_STREAM; // We choose to work with TCP stream sockets
 	_protocol = AI_PASSIVE;
 }
