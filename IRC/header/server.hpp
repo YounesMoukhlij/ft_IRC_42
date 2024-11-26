@@ -13,6 +13,7 @@ class Server
 		std::string						_datetime;
 		int								_socket_fd;
 		int 							_domain;
+		int
 
 
 	public:
