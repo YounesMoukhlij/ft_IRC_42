@@ -13,7 +13,7 @@ class Server
 		std::string						_datetime;
 		int								_socket_fd;
 
-		
+
 
 	public:
 		~Server();
@@ -34,3 +34,9 @@ Server::setSocketParameter()
 }
 
 
+void Server::setHints()
+{
+	_hints.ai_family = AF_INET;		  // We choose Ipv4
+	_hints.ai_socktype = SOCK_STREAM; // We choose to work with TCP stream sockets
+	_hints.ai_flags = AI_PASSIVE;	  // We'll be on localhost by default
+}
