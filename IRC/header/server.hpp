@@ -29,7 +29,11 @@ class Server
 Server::startServer()
 {
 	_socket_fd = socket(_domain, _type, _protocol);
-	if ()
+	if (_socket_fd == -1)
+	{
+		std::cerr << "Error : The socket creation failed !" << std::endl;
+		exit(EXIT_FAILURE);
+	}
 }
 
 Server::setSocketParameter()
