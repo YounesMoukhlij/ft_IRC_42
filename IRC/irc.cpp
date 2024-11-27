@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 
     try
     {
-        server.
+        server.ServerConnection();
     }
     catch(const std::exception& e)
     {
