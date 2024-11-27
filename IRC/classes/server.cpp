@@ -15,7 +15,7 @@ Server::~Server()
 
 void	Server::startServer()
 {
-    
+    struct sockaddr_in server_addr;
 	_socket_fd = socket(_params.ai_family, _params.ai_socktype , _params.ai_protocol);
 	if (_socket_fd == -1)
 	{
