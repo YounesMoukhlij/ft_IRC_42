@@ -12,7 +12,7 @@ NAME = ircserv
 all : ${NAME}
 
 
-%.o: %.cpp irc.hpp
+%.o: %.cpp irc.hpp server.hpp
 	@echo "\033[30m Compiling ...\033[0m"
 	@c++ ${CPPFLAGS} -c $< -o $@
 
