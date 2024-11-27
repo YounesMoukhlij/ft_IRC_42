@@ -20,6 +20,10 @@ int main(int argc, char **argv)
     Server  server(argv[1], argv[2]);
 
     if (server.startServer())
+    {
+        std::cerr << "Error : The server failed to start !" << std::endl;
+        return (EXIT_FAILURE);
+    }
 
     // try
     // {
