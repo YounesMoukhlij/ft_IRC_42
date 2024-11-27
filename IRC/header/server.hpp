@@ -23,6 +23,7 @@ class Server
 
 		void	startServer();
 		void	setSocketParameter();
+		void	ServerConnection();
 
 		class server : public std::exception
 		{
