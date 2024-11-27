@@ -27,13 +27,13 @@ int Server::startServer()
 	if (_socket_fd == -1)
 	{
 		std::cerr << "Error : The socket creation failed !" << std::endl;
-        
+        return (EXIT_FAILURE);
 	}
 
     if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
     {
         std::cerr << "Error: Socket bind failed!" << std::endl;
-        
+        return (EXIT_FAILURE);
         // close(_socket_fd);
     }
 
@@ -41,7 +41,7 @@ int Server::startServer()
     if (listen(_socket_fd, 5) == -1)
     {
         std::cerr << "Error: Socket listen failed!" << std::endl;
-        
+        return (EXIT_FAILURE);
         // close(_socket_fd);
     }
 
@@ -52,7 +52,7 @@ int Server::startServer()
     if (client_sock == -1)
     {
         std::cerr << "Error: Socket accept failed!" << std::endl;
-        
+        return (EXIT_FAILURE);
         // close(_socket_fd);
     }
     std::cout << "Client connected!" << std::endl;
