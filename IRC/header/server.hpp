@@ -32,18 +32,7 @@ class Server
 		};
 };
 
-void	Server::ServerConnection()
-{
-	while (1)
-	{
-		std::cout << "The server is waiting for a connection ..." << std::endl;
-		if (accept(_socket_fd, 0x0, 0x0) == -1)
-		{
-			std::cerr << "Error : The accept failed !" << std::endl;
-			exit(EXIT_FAILURE);
-		}
-	}
-}
+
 
 
 
