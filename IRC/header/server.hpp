@@ -34,7 +34,7 @@ Server::startServer()
 	}
 }
 
-Server::setSocketParameter()
+void::setSocketParameter()
 {
 	_params.ai_family = AF_INET;  // We choose Ipv4
 	_params.ai_socktype = SOCK_STREAM; // We choose to work with TCP stream sockets
