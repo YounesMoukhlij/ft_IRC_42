@@ -27,7 +27,7 @@ class Server
 		class server
 		{
 			public:
-				
+				const char * what() const throw();
 		};
 
 		server::server(/* args */)
