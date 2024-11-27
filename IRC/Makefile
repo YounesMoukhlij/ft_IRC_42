@@ -11,7 +11,7 @@ NAME = ircserv
 HEADER = irc.hpp
 		 classes/server.hpp
 		 classes/client.hpp
-		 he
+		 header/
 
 
 all : ${NAME}
