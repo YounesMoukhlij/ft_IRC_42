@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "headers.hpp"
+#include "Headers.hpp"
 
 
 class Server
@@ -20,7 +20,7 @@ class Server
 		~Server();
 		Server(std::string port, std::string password);
 
-		
+
 		void	startServer();
 		void	setSocketParameter();
 };
