@@ -26,21 +26,18 @@ class Server
 
 		class server
 		{
-		private:
-			/* data */
-		public:
-			server(/* args */);
-			~server();
+			public:
+				
 		};
-		
+
 		server::server(/* args */)
 		{
 		}
-		
+
 		server::~server()
 		{
 		}
-		
+
 };
 
 
