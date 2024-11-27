@@ -29,7 +29,8 @@ void	Server::startServer()
     }
 
     // Listen for incoming connections
-    if (listen(_socket_fd, 5) == -1) {
+    if (listen(_socket_fd, 5) == -1)
+    {
         std::cerr << "Error: Socket listen failed!" << std::endl;
         close(_socket_fd);
         return 1;
