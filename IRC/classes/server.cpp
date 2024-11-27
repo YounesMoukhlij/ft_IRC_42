@@ -15,7 +15,7 @@ Server::~Server()
 
 void	Server::startServer()
 {
-	_socket_fd = socket(_params.ain_family, _params.sin_addr.s_addr , _params.sin_protocol);
+	_socket_fd = socket(_params.ai_family, _params.ai_p , _params.ain_protocol);
 	if (_socket_fd == -1)
 	{
 		std::cerr << "Error : The socket creation failed !" << std::endl;
