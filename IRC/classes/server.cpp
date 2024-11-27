@@ -26,7 +26,7 @@ void	Server::startServer()
 	if (_socket_fd == -1)
 	{
 		std::cerr << "Error : The socket creation failed !" << std::endl;
-        throw ""
+        throw "Error : The socket creation failed !";
 	}
     if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
     {
