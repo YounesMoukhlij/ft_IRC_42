@@ -19,6 +19,8 @@ class Server
 	public:
 		~Server();
 		Server(std::string port, std::string password);
+
+		
 		void	startServer();
 		void	setSocketParameter();
 };
