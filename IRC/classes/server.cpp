@@ -21,26 +21,26 @@ void	Server::startServer()
 		std::cerr << "Error : The socket creation failed !" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-    if (bind(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1) {
+    if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1) {
         std::cerr << "Error: Socket bind failed!" << std::endl;
-        close(sockfd);
+        close(_socket_fd);
         return 1;
     }
 
     // Listen for incoming connections
-    if (listen(sockfd, 5) == -1) {
+    if (listen(_socket_fd, 5) == -1) {
         std::cerr << "Error: Socket listen failed!" << std::endl;
-        close(sockfd);
+        close(_socket_fd);
         return 1;
     }
 
     std::cout << "Server is listening on port 8080..." << std::endl;
 
     // Accept a connection (blocking call)
-    int client_sock = accept(sockfd, NULL, NULL);
+    int client_sock = accept(_socket_fd, NULL, NULL);
     if (client_sock == -1) {
         std::cerr << "Error: Socket accept failed!" << std::endl;
-        close(sockfd);
+        close(_socket_fd);
         return 1;
     }
 
