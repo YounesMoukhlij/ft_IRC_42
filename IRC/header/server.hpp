@@ -24,7 +24,7 @@ class Server
 		void	startServer();
 		void	setSocketParameter();
 
-		class server
+		class server : public std::exception
 		{
 			public:
 				const char * what() const throw();
