@@ -15,7 +15,7 @@ int main(int argc, char **argv)
         return (EXIT_FAILURE);
     }
 	signal(SIGINT, signal_handler);
-    
+    Server  server(argv[1], argv[2]);
 
 
 
