@@ -21,7 +21,7 @@ void	Server::startServer()
 		std::cerr << "Error : The socket creation failed !" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-    if (bind(_socket_fd, _params.sin_addr, _params.sin_addrlen) == -1)
+    if (bind(_socket_fd, _params.sin_addr.s_addr , _params.sin_addrlen) == -1)
     {
         std::cerr << "Error : The bind failed !" << std::endl;
         exit(EXIT_FAILURE);
