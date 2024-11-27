@@ -5,8 +5,6 @@ SRC = irc.cpp classes/server.cpp classes/client.cpp
 OBJ = ${SRC:.cpp=.o}
 
 
-
-
 HEADER = irc.hpp
 		 classes/server.hpp
 		 classes/client.hpp
