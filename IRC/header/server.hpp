@@ -32,6 +32,8 @@ class Server
 		};
 };
 
+		void	ServerConnection();
+
 
 
 
