@@ -12,7 +12,7 @@ HEADER = irc.hpp
 		 classes/server.hpp
 		 classes/client.hpp
 		 header/IRC.hpp
-		 headerheaders.hpp
+		 header/headers.hpp
 
 
 all : ${NAME}
