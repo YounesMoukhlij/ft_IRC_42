@@ -6,7 +6,6 @@ OBJ = ${SRC:.cpp=.o}
 
 
 
-NAME = ircserv
 
 HEADER = irc.hpp
 		 classes/server.hpp
@@ -14,6 +13,7 @@ HEADER = irc.hpp
 		 header/IRC.hpp
 		 header/headers.hpp
 
+NAME = ircserv
 
 all : ${NAME}
 
