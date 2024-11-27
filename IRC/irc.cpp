@@ -16,8 +16,20 @@ int main(int argc, char **argv)
     }
 	signal(SIGINT, signal_handler);
 
-    
+
     Server  server(argv[1], argv[2]);
+
+    try
+    {
+        {
+            
+        }
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
 
 
 
