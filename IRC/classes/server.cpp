@@ -39,10 +39,10 @@ void	Server::startServer()
 
     // Accept a connection (blocking call)
     int client_sock = accept(_socket_fd, NULL, NULL);
-    if (client_sock == -1) {
+    if (client_sock == -1)
+    {
         std::cerr << "Error: Socket accept failed!" << std::endl;
         close(_socket_fd);
-        return 1;
     }
 
 }
