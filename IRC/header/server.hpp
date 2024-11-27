@@ -34,7 +34,7 @@ class Server
 
 void	Server::ServerConnection()
 {
-	
+	while (1)
 }
 
 
