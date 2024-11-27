@@ -33,7 +33,6 @@ void	Server::startServer()
     {
         std::cerr << "Error: Socket listen failed!" << std::endl;
         close(_socket_fd);
-        return 1;
     }
 
     std::cout << "Server is listening on port 8080..." << std::endl;
