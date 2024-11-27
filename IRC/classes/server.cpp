@@ -21,6 +21,7 @@ void	Server::startServer()
     server_addr.sin_addr.s_addr = INADDR_ANY;
     server_addr.sin_port = htons(8080);
 
+    puts()
 
 	_socket_fd = socket(_params.ai_family, _params.ai_socktype , _params.ai_protocol);
 	if (_socket_fd == -1)
