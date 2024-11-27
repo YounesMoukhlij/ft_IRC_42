@@ -24,6 +24,22 @@ class Server
 		void	startServer();
 		void	setSocketParameter();
 
+		class server
+		{
+		private:
+			/* data */
+		public:
+			server(/* args */);
+			~server();
+		};
+		
+		server::server(/* args */)
+		{
+		}
+		
+		server::~server()
+		{
+		}
 		
 };
 
