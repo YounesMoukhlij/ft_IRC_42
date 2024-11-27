@@ -22,6 +22,7 @@ void	Server::startServer()
 		exit(EXIT_FAILURE);
 	}
     
+
 }
 
 void	Server::setSocketParameter()
