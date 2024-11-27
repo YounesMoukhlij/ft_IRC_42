@@ -29,15 +29,6 @@ class Server
 			public:
 				const char * what() const throw();
 		};
-
-		server::server(/* args */)
-		{
-		}
-
-		server::~server()
-		{
-		}
-
 };
 
 
