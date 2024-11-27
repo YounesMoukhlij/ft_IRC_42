@@ -32,7 +32,7 @@ int Server::startServer()
 	}
 
     // if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
-    if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
+    if (bind(_server_socket_fd, _servinfo->ai_addr, _servinfo->ai_addrlen))
     {
         std::cerr << "Error: Socket bind failed!" << std::endl;
         // close(_socket_fd);
