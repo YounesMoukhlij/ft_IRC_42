@@ -8,7 +8,7 @@ OBJ = ${SRC:.cpp=.o}
 
 NAME = ircserv
 
-all : ${NAME}
+all : ${NAME} 
 
 %.o: %.cpp #${HEADER}
 	@echo "\033[30m Compiling ...\033[0m"
