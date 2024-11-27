@@ -16,6 +16,12 @@ Server::~Server()
 void	Server::startServer()
 {
     struct sockaddr_in server_addr;
+
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = INADDR_ANY;
+    server_addr.sin_port = htons(8080);
+
+    
 	_socket_fd = socket(_params.ai_family, _params.ai_socktype , _params.ai_protocol);
 	if (_socket_fd == -1)
 	{
