@@ -22,8 +22,8 @@ class Server
 
 
 		void	startServer();
-		void	setSocketParameter();
 		void	ServerConnection();
+		void	setSocketParameter();
 
 		class server : public std::exception
 		{
