@@ -21,7 +21,7 @@ class Server
 		Server(std::string port, std::string password);
 
 
-		void	startServer();
+		int		startServer();
 		void	ServerConnection();
 		void	setSocketParameter();
 
