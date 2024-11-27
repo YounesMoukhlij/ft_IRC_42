@@ -21,6 +21,7 @@ void	Server::startServer()
 		std::cerr << "Error : The socket creation failed !" << std::endl;
 		exit(EXIT_FAILURE);
 	}
+    
 }
 
 void	Server::setSocketParameter()
