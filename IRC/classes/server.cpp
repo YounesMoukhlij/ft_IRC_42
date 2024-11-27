@@ -13,7 +13,7 @@ Server::~Server()
     std::cout << "The Server is shutting down ... " << std::endl;
 }
 
-void	Server::startServer()
+int Server::startServer()
 {
     struct sockaddr_in server_addr;
 
