@@ -56,7 +56,7 @@ int Server::startServer()
         // close(_socket_fd);
     }
     std::cout << "Client connected!" << std::endl;
-        return (EXIT_FAILURE);
+    return (EXIT_SUCCESS);
 
 
 }
