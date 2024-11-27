@@ -26,7 +26,11 @@ void	Server::startServer()
         std::cerr << "Error : The bind failed !" << std::endl;
         exit(EXIT_FAILURE);
     }
-    if ()
+    if (listen(_socket_fd, 10) == -1)
+    {
+        std::cerr << "Error : The listen failed !" << std::endl;
+        exit(EXIT_FAILURE);
+    }
 
 }
 
