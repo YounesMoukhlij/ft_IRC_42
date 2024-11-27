@@ -33,16 +33,16 @@ int Server::startServer()
     if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
     {
         std::cerr << "Error: Socket bind failed!" << std::endl;
-        return (EXIT_FAILURE);
         // close(_socket_fd);
+        return (EXIT_FAILURE);
     }
 
     // Listen for incoming connections
     if (listen(_socket_fd, 5) == -1)
     {
         std::cerr << "Error: Socket listen failed!" << std::endl;
-        return (EXIT_FAILURE);
         // close(_socket_fd);
+        return (EXIT_FAILURE);
     }
 
     std::cout << "Server is listening on port 8080..." << std::endl;
@@ -52,8 +52,8 @@ int Server::startServer()
     if (client_sock == -1)
     {
         std::cerr << "Error: Socket accept failed!" << std::endl;
-        return (EXIT_FAILURE);
         // close(_socket_fd);
+        return (EXIT_FAILURE);
     }
     std::cout << "Client connected!" << std::endl;
     return (EXIT_SUCCESS);
