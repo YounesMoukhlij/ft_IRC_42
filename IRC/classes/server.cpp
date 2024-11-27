@@ -31,7 +31,11 @@ void	Server::startServer()
         std::cerr << "Error : The listen failed !" << std::endl;
         exit(EXIT_FAILURE);
     }
-    if (ac)
+    if (accept(_socket_fd, _params.ai_addr, _params.ai_addrlen) == -1)
+    {
+        std::cerr << "Error : The accept failed !" << std::endl;
+        exit(EXIT_FAILURE);
+    }
 
 }
 
