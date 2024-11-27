@@ -18,7 +18,7 @@ HEADER = irc.hpp
 all : ${NAME}
 
 
-%.o: %.cpp ${HEADER}
+%.o: %.cpp #${HEADER}
 	@echo "\033[30m Compiling ...\033[0m"
 	@c++ ${CPPFLAGS} -c $< -o $@
 
