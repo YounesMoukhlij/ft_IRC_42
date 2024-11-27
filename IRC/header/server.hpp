@@ -24,7 +24,7 @@ class Server
 };
 
 
-Server::startServer()
+void	Server::startServer()
 {
 	_socket_fd = socket(_params.ai_family, _params.ai_socktype, _params.ai_protocol);
 	if (_socket_fd == -1)
