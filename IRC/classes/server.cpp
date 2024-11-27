@@ -26,7 +26,7 @@ void	Server::startServer()
         std::cerr << "Error : The bind failed !" << std::endl;
         exit(EXIT_FAILURE);
     }
-    
+    if ()
 
 }
 
