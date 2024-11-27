@@ -26,7 +26,7 @@ class Server
 
 Server::startServer()
 {
-	_socket_fd = socket(_params->, _params->_type, _params->_protocol);
+	_socket_fd = socket(_params->ai_family, _params->_type, _params->_protocol);
 	if (_socket_fd == -1)
 	{
 		std::cerr << "Error : The socket creation failed !" << std::endl;
