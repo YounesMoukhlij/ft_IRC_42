@@ -31,7 +31,7 @@ void	Server::startServer()
         std::cerr << "Error : The listen failed !" << std::endl;
         exit(EXIT_FAILURE);
     }
-    if ()
+    if (ac)
 
 }
 
