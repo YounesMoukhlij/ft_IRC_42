@@ -19,7 +19,7 @@ class Server
 	public:
 		~Server();
 		startServer();
-		setSocketParameter();
+		void();
 		Server(std::string port, std::string password);
 };
 
