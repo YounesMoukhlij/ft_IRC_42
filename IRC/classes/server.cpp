@@ -21,7 +21,11 @@ void	Server::startServer()
 		std::cerr << "Error : The socket creation failed !" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-    if (bind())
+    if (bind(_socket_fd, _params.ai_addr, _params.ai_addrlen) == -1)
+    {
+        std::cerr << "Error : The bind failed !" << std::endl;
+        exit(EXIT_FAILURE);
+    }
 
 }
 
