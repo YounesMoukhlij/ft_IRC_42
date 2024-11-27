@@ -3,7 +3,8 @@ OBJ = ${SRC:.cpp=.o}
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = irc.cpp
-	  ./classes/server
+	  ./classes/server.cpp
+	  
 
 NAME = ircserv
 
