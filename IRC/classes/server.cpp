@@ -29,3 +29,5 @@ void	Server::setSocketParameter()
 	_params.ai_socktype = SOCK_STREAM; // We choose to work with TCP stream sockets
 	_params.ai_protocol = AI_PASSIVE;
 }
+
+const 
