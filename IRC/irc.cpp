@@ -19,14 +19,14 @@ int main(int argc, char **argv)
 
     Server  server(argv[1], argv[2]);
 
-    try
-    {
-        server.ServerConnection();
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    // try
+    // {
+    //     server.ServerConnection();
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
 
 
 
