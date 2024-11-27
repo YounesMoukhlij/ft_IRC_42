@@ -36,6 +36,7 @@ void	Server::startServer()
         std::cerr << "Error : The accept failed !" << std::endl;
         exit(EXIT_FAILURE);
     }
+    
 
 }
 
