@@ -31,7 +31,7 @@ void	Server::startServer()
     if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
     {
         std::cerr << "Error: Socket bind failed!" << std::endl;
-        throw
+        throw "Error: Socket bind failed!";
         // close(_socket_fd);
     }
 
@@ -39,6 +39,7 @@ void	Server::startServer()
     if (listen(_socket_fd, 5) == -1)
     {
         std::cerr << "Error: Socket listen failed!" << std::endl;
+        throw
         // close(_socket_fd);
     }
 
