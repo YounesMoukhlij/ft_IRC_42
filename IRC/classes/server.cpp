@@ -30,4 +30,7 @@ void	Server::setSocketParameter()
 	_params.ai_protocol = AI_PASSIVE;
 }
 
-const 
+const char *Server::server::what(void) const throw()
+{
+    return ("Error : The server failed to start !");
+}
