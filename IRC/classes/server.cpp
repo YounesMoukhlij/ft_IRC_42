@@ -22,10 +22,10 @@ void	Server::startServer()
 		std::cerr << "Error : The socket creation failed !" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-    if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1) {
+    if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
+    {
         std::cerr << "Error: Socket bind failed!" << std::endl;
         close(_socket_fd);
-        return 1;
     }
 
     // Listen for incoming connections
