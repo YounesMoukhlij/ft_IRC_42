@@ -50,6 +50,7 @@ void	Server::startServer()
     if (client_sock == -1)
     {
         std::cerr << "Error: Socket accept failed!" << std::endl;
+        throw "Error: Socket accept failed!";
         // close(_socket_fd);
     }
     std::cout << "Client connected!" << std::endl;
