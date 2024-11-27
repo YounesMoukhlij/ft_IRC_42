@@ -39,7 +39,7 @@ void	Server::startServer()
     if (listen(_socket_fd, 5) == -1)
     {
         std::cerr << "Error: Socket listen failed!" << std::endl;
-        throw
+        throw "Error: Socket listen failed!";
         // close(_socket_fd);
     }
 
