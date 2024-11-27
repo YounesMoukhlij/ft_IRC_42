@@ -32,7 +32,7 @@ class Server
 		};
 };
 
-		void	ServerConnection();
+		void	ServerConnection()
 
 
 
