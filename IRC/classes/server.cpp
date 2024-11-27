@@ -15,13 +15,13 @@ Server::~Server()
 
 void	Server::startServer()
 {
-	_socket_fd = socket(_params.si_family, _params.si_socktype, _params.si_protocol);
+	_socket_fd = socket(_params.sin_family, _params.sin_socktype, _params.sin_protocol);
 	if (_socket_fd == -1)
 	{
 		std::cerr << "Error : The socket creation failed !" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-    if (bind(_socket_fd, _params.si_addr, _params.si_addrlen) == -1)
+    if (bind(_socket_fd, _params.sin_addr, _params.sin_addrlen) == -1)
     {
         std::cerr << "Error : The bind failed !" << std::endl;
         exit(EXIT_FAILURE);
