@@ -21,7 +21,7 @@ void	Server::startServer()
     server_addr.sin_addr.s_addr = INADDR_ANY;
     server_addr.sin_port = htons(8080);
 
-    
+
 	_socket_fd = socket(_params.ai_family, _params.ai_socktype , _params.ai_protocol);
 	if (_socket_fd == -1)
 	{
@@ -50,6 +50,8 @@ void	Server::startServer()
         std::cerr << "Error: Socket accept failed!" << std::endl;
         // close(_socket_fd);
     }
+    std::cout << "Client connected!" << std::endl;
+
 
 }
 
