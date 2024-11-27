@@ -32,10 +32,10 @@ class Server
 		};
 };
 
-		void	Server::ServerConnection()
-		{
-			
-		}
+void	Server::ServerConnection()
+{
+
+}
 
 
 
