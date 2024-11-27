@@ -8,7 +8,9 @@ SRC = irc.cpp
 
 NAME = ircserv
 
-
+HEADER = irc.hpp
+		 classes/server.hpp
+		 classes/client.hpp
 
 
 all : ${NAME}
