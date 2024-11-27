@@ -23,7 +23,7 @@ int Server::startServer()
 
 
 
-	_socket_fd = socket(AF_INET, _params.ai_socktype , 0);
+	_socket_fd = socket(AF_INET, SOCK_STREAM , 0);
 	// _socket_fd = socket(_params.ai_family, _params.ai_socktype , _params.ai_protocol);
 	if (_socket_fd == -1)
 	{
