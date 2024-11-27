@@ -23,6 +23,8 @@ class Server
 
 		void	startServer();
 		void	setSocketParameter();
+
+		
 };
 
 
