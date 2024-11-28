@@ -35,7 +35,7 @@ class Server
 
 
 
-
+typedef struct 
 
 
 
