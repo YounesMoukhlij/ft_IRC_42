@@ -13,7 +13,7 @@ class Server
 		std::string						_datetime;
 		int								_socket_fd;
 		struct addrinfo					_params;
-		struct addrinfo					*socketPara;
+		// struct addrinfo					*socketPara;
 
 
 
@@ -37,7 +37,7 @@ class Server
 
 typedef struct s_para
 {
-	
+
 }
 
 
