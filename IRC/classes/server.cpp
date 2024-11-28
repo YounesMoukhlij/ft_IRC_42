@@ -31,8 +31,8 @@ int Server::startServer()
         return (EXIT_FAILURE);
 	}
 
-    // if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
-    if (bind(_socket_fd, socketPara->ai_addr, socketPara->ai_addrlen) == -1)
+    if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
+    // if (bind(_socket_fd, socketPara->ai_addr, socketPara->ai_addrlen) == -1)
     {
         std::cerr << "Error: Socket bind failed!" << std::endl;
         // close(_socket_fd);
