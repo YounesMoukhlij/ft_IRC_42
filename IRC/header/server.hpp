@@ -35,10 +35,7 @@ class Server
 
 
 
-typedef struct s_para
-{
 
-}
 
 
 
