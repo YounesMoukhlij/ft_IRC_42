@@ -12,7 +12,7 @@ class Server
 		std::string						_password;
 		std::string						_datetime;
 		int								_socket_fd;
-		// struct addrinfo					_params;
+		struct addrinfo					_params;
 		// struct addrinfo					*socketPara;
 
 
