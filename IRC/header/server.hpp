@@ -35,7 +35,10 @@ class Server
 
 
 
-typedef struct 
+typedef struct s_para
+{
+	
+}
 
 
 
