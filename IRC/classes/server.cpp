@@ -49,7 +49,7 @@ int Server::startServer()
     int client_sock = accept(_socket_fd, NULL, NULL);
     if (client_sock == -1)
     {
-        std::cerr << "Error: Socket accept failed!" << std::endl;
+        throw (std::logic_error("Error: Socket accept failed!"));
         // close(_socket_fd);
         return (EXIT_FAILURE);
     }
