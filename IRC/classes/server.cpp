@@ -61,7 +61,8 @@ void Server::ServerConnection()
     server_poll.events = POLLIN;
     pollArray.push_back(server_poll);
     int j = 0;
-    // while maa7ad 
+    // while maa7ad socket khdama lmotor khdaam kayt7aam f ram eela walo, irc galek 
+    // while fiha kulchi, connection between clients and this server
     while (_socket_fd != -1)
     {
         // Wait for clients ,, the poll handles I/O of a socket
