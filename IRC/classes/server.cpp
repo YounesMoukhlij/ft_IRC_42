@@ -81,19 +81,42 @@ void	Server::ServerConnection()
             std::cout << "Connection Established." << std::endl;
 
             // Read data from the client
-            ssize_t bytes_received;
-            while ((bytes_received = recv(_client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
+            if (pollArray[0].revents & POLLIN)
             {
-                buffer[bytes_received] = '\0';  // Null-terminate the string
-                std::cout << "Received from client: " << buffer << std::endl;
-                // Echo the message back to the client (optional)
-                send(_client_fd, buffer, bytes_received, 0);
+                ssize_t bytes_received = recv(pollArray[0].fd, buffer, sizeof(buffer) - 1, 0);
+                if (bytes_received > 0)
+                {
+                    buffer[bytes_received] = '\0';  // Null-terminate the received message
+                    std::cout << "Received from client: " << buffer << std::endl;
+
+                    // Echo the message back to the client
+                    send(pollArray[0].fd, buffer, bytes_received, 0);
+                }
+                else if (bytes_received == 0)
+                {
+                    std::cout << "Client disconnected." << std::endl;
+                    close(pollArray[0].fd);  // Close the socket
+                    // pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
+                    // --i;  // Adjust index after removal
+                }
+                else
+                {
+                    std::cerr << "Error receiving data from client." << std::endl;
+                }
             }
-            if (bytes_received == 0) {
-                std::cout << "Client disconnected." << std::endl;
-            } else if (bytes_received == -1) {
-                std::cerr << "Error receiving data from client." << std::endl;
-            }
+            // ssize_t bytes_received;
+            // while ((bytes_received = recv(_client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
+            // {
+            //     buffer[bytes_received] = '\0';  // Null-terminate the string
+            //     std::cout << "Received from client: " << buffer << std::endl;
+            //     // Echo the message back to the client (optional)
+            //     send(_client_fd, buffer, bytes_received, 0);
+            // }
+            // if (bytes_received == 0) {
+            //     std::cout << "Client disconnected." << std::endl;
+            // } else if (bytes_received == -1) {
+            //     std::cerr << "Error receiving data from client." << std::endl;
+            // }
         }
         close(_client_fd);
 
