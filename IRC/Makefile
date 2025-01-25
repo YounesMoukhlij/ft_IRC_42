@@ -1,12 +1,15 @@
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = irc.cpp \
+SRC = "irc.cpp" \
 	  classes/Server.cpp \
 	  classes/Client.cpp \
 
 OBJ = ${SRC:.cpp=.o}
 
+HEADER = "./header/irc.hpp" \
+		 "./header/classes/Server.hpp" \
+		 "./header/classes/Client.hpp" \
 
 NAME = ircserv
 
