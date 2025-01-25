@@ -66,14 +66,14 @@ void	Server::ServerConnection()
 
 
 		std::cout << "The server is waiting for a connection ..." << std::endl;
-        server.client_fd = accept(_socket_fd, 0x0, 0x0);
-		if (server.client_fd == -1)
+        server._client_fd = accept(_socket_fd, 0x0, 0x0);
+		if (server._client_fd == -1)
 			throw (std::logic_error("Error : The accept failed !"));
         std::cout << "Connection Established." << std::endl;
 
         // Read data from the client
         ssize_t bytes_received;
-        while ((bytes_received = recv(server.client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
+        while ((bytes_received = recv(server._client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
         {
             buffer[bytes_received] = '\0';  // Null-terminate the string
             std::cout << "Received from client: " << buffer << std::endl;
