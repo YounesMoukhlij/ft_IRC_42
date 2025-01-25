@@ -3,20 +3,20 @@
 
 #include "Headers.hpp"
 
-class Client
-{
-    private:
-        /* data */
-    public:
-        Client(/* args */);
-        ~Client();
-};
+// class Client
+// {
+//     private:
+//         /* data */
+//     public:
+//         Client(/* args */);
+//         ~Client();
+// };
 
-Client::Client(/* args */)
-{
-}
+// Client::Client(/* args */)
+// {
+// }
 
-Client::~Client()
-{
-}
+// Client::~Client()
+// {
+// }
 
