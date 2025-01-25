@@ -16,6 +16,8 @@ class Server
 		int								_client_fd;
 		int								_port_number;
 		struct pollfd server_poll;
+		struct pollfd client_poll;
+
 
 
 		// Poll parameters :

@@ -101,7 +101,7 @@ void Server::ServerConnection()
         // Wait for events
         _poll_fd = poll(&pollArray[0], pollArray.size(), -1);
         if (_poll_fd == -1)
-            throw (std::logical_error("Error: The poll failed!"));
+            throw (std::logic_error("Error: The poll failed!"));
 
 
         // Check if the server socket is ready (new connection)
@@ -110,12 +110,11 @@ void Server::ServerConnection()
             std::cout << "The server is waiting for a connection ..." << std::endl;
             _client_fd = accept(_socket_fd, 0, 0);
             if (_client_fd == -1)
-                throw (std::logical_error("Error: The accept failed!"));
+                throw (std::logic_error("Error: The accept failed!"));
 
             std::cout << "  ~~~ Connection Established. ~~~." << std::endl;
 
             // Add the client socket to the poll array to read data from it
-            struct pollfd client_poll;
             client_poll.fd = _client_fd;
             client_poll.events = POLLIN;
             pollArray.push_back(client_poll);  // Add client to poll array
