@@ -18,6 +18,7 @@ int main(int argc, char **argv)
         std::cerr << "Error : The program started like this ./ircserv port password !" << std::endl;
         return (EXIT_FAILURE);
     }
+    
 	signal(SIGINT, signal_handler);
 
 
