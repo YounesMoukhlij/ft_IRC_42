@@ -92,7 +92,6 @@ void Server::ServerConnection()
     char buffer[1024];
 
     // Initialize pollArray to include the server socket
-    struct pollfd server_poll;
     server_poll.fd = _socket_fd;  // Server socket for listening
     server_poll.events = POLLIN;  // We want to listen for input events
     pollArray.push_back(server_poll);  // Add server socket to pollArray
