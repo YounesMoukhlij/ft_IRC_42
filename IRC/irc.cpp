@@ -6,7 +6,7 @@ void    signal_handler(int signal)
 {
     if (signal == SIGINT)
     {
-        std::cout << "Welcome any time." << std::endl;
+        std::cout << "\n ~~~~ Come back any time. ~~~~" << std::endl;
         exit(0);
     }
 }
@@ -53,19 +53,15 @@ int main(int argc, char **argv)
 
     Server  server(argv[1], argv[2]);
 
-    if (server.startServer())
-    {
-        std::cerr << "Error : The server failed to start !" << std::endl;
-        return (EXIT_FAILURE);
-    }
-
     try
     {
+        server.startServer();
         server.ServerConnection();
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        server.ShutServer();
     }
 
 

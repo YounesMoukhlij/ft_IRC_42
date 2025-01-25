@@ -4,7 +4,7 @@
 
 Server::Server(std::string port, std::string password) : _port(port), _password(password)
 {
-    std::cout << "The Server is Getting UP ... " << std::endl;
+    std::cout << "The Server is ON ... " << std::endl;
     setSocketParameter();
 
 }
@@ -14,7 +14,7 @@ Server::~Server()
     std::cout << "The Server is shutting down ... " << std::endl;
 }
 
-int Server::startServer()
+void    Server::startServer()
 {
     struct sockaddr_in server_addr;
 
@@ -26,35 +26,19 @@ int Server::startServer()
 
 	_socket_fd = socket(AF_INET, SOCK_STREAM , 0);
 	if (_socket_fd == -1)
-	{
 		throw (std::logic_error("Error : The socket creation failed !"));
-	}
 
     if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
-    {
         throw (std::logic_error("Error: Socket bind failed!"));
-        // close(_socket_fd);
-    }
 
-    // Listen for incoming connections
     if (listen(_socket_fd, 5) == -1)
-    {
         throw (std::logic_error("Error: Socket listen failed!"));
-        return (EXIT_FAILURE);
-    }
 
-    std::cout << "Server is listening on port 8080..." << std::endl;
+    std::cout << "Server is listening on port : "<< _port << std::endl << "\n \t Waiting ... "<< std::endl;
 
-    // Accept a connection (blocking call)
-    int client_sock = accept(_socket_fd, NULL, NULL);
-    if (client_sock == -1)
-    {
+    if (accept(_socket_fd, NULL, NULL) == -1)
         throw (std::logic_error("Error: Socket accept failed!"));
-        // close(_socket_fd);
-        return (EXIT_FAILURE);
-    }
-    std::cout << "Client connected!" << std::endl;
-    return (EXIT_SUCCESS);
+    std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
 
 
 }
@@ -67,23 +51,41 @@ void	Server::setSocketParameter()
     _port_number = std::stoi(_port);
 }
 
-const char *Server::server::what(void) const throw()
-{
-    return ("Error : The server failed to start !");
-}
+
 
 void	Server::ServerConnection()
 {
-	while (1)
+    int     client_fd = 0;
+    char    buffer[1024];
+
+	while (_socket_fd != -1)
 	{
 		std::cout << "The server is waiting for a connection ..." << std::endl;
-		if (accept(_socket_fd, 0x0, 0x0) == -1)
-		{
-			std::cerr << "Error : The accept failed !" << std::endl;
-			exit(EXIT_FAILURE);
-		}
-		else
-			std::cerr << "Connection Established." << std::endl;
+        client_fd = accept(_socket_fd, 0x0, 0x0);
+		if (client_fd == -1)
+			throw (std::logic_error("Error : The accept failed !"));
+        std::cout << "Connection Established." << std::endl;
+
+        // Read data from the client
+        ssize_t bytes_received;
+        while ((bytes_received = recv(client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
+        {
+            buffer[bytes_received] = '\0';  // Null-terminate the string
+            std::cout << "Received from client: " << buffer << std::endl;
+            // Echo the message back to the client (optional)
+            send(client_fd, buffer, bytes_received, 0);
+        }
+        if (bytes_received == 0) {
+            std::cout << "Client disconnected." << std::endl;
+        } else if (bytes_received == -1) {
+            std::cerr << "Error receiving data from client." << std::endl;
+        }
+        close(client_fd);
 
 	}
+}
+
+void	Server::ShutServer()
+{
+    close(_socket_fd);
 }

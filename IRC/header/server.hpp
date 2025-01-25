@@ -13,7 +13,6 @@ class Server
 		std::string						_password;
 		int								_socket_fd;
 		struct addrinfo					_params;
-		// struct addrinfo					*socketPara;
 
 
 
@@ -22,15 +21,11 @@ class Server
 		Server(std::string port, std::string password);
 
 
-		int		startServer();
+		void	ShutServer();
+		void	startServer();
 		void	ServerConnection();
 		void	setSocketParameter();
 
-		class server : public std::exception
-		{
-			public:
-				const char *what(void) const throw();
-		};
 };
 
 
