@@ -54,6 +54,8 @@ void Server::ServerConnection()
 {
     char buffer[2048];
 
+    (void) buffer;
+
 
     server_poll.fd = _socket_fd;
     server_poll.events = POLLIN;
@@ -85,39 +87,39 @@ void Server::ServerConnection()
         }
 
 
-        for (size_t i = 1; i < pollArray.size(); ++i)
-        {
-            if (pollArray[i].fd < 0)  // Ensure client socket is valid
-            {
-                std::cerr << "Invalid client socket detected at index [" << i << "]" <<  std::endl;
-                continue;  // Skip invalid sockets
-            }
+        // for (size_t i = 1; i < pollArray.size(); ++i)
+        // {
+        //     if (pollArray[i].fd < 0)  // Ensure client socket is valid
+        //     {
+        //         std::cerr << "Invalid client socket detected at index [" << i << "]" <<  std::endl;
+        //         continue;  // Skip invalid sockets
+        //     }
 
-            // If the client socket has data to read
-            if (pollArray[i].revents & POLLIN)
-            {
-                ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
-                if (bytes_received > 0)
-                {
-                    buffer[bytes_received] = '\0';
-                    std::cout << "Received from client [" << i << "] "<< buffer << std::endl;
+        //     // If the client socket has data to read
+        //     if (pollArray[i].revents & POLLIN)
+        //     {
+        //         ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
+        //         if (bytes_received > 0)
+        //         {
+        //             buffer[bytes_received] = '\0';
+        //             std::cout << "Received from client [" << i << "] "<< buffer << std::endl;
 
-                    // prinnnnnt the message back to the client
-                    send(pollArray[i].fd, "message received.", 18, 0);
-                }
-                else if (bytes_received == 0)
-                {
-                    std::cout << "Client disconnected." << std::endl;
-                    close(pollArray[i].fd);  // Close the socket
-                    pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
-                    --i;
-                }
-                else
-                {
-                    std::cerr << "Error receiving data from client." << std::endl;
-                }
-            }
-        }
+        //             // prinnnnnt the message back to the client
+        //             send(pollArray[i].fd, "message received.", 18, 0);
+        //         }
+        //         else if (bytes_received == 0)
+        //         {
+        //             std::cout << "Client disconnected." << std::endl;
+        //             close(pollArray[i].fd);  // Close the socket
+        //             pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
+        //             --i;
+        //         }
+        //         else
+        //         {
+        //             std::cerr << "Error receiving data from client." << std::endl;
+        //         }
+        //     }
+        // }
     }
 }
 
