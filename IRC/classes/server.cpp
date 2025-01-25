@@ -60,7 +60,7 @@ void	Server::ServerConnection()
 
     char            buffer[1024];
 
-    
+
     pollArray[0].fd = _socket_fd ;
     pollArray[0].events = POLLIN ;
 
@@ -72,27 +72,28 @@ void	Server::ServerConnection()
         std::cout << " -> " << _poll_fd << std::endl ;
 
 
-
-		std::cout << "The server is waiting for a connection ..." << std::endl;
-        _client_fd = accept(_socket_fd, 0x0, 0x0);
-		if (_client_fd == -1)
-			throw (std::logic_error("Error : The accept failed !"));
-        std::cout << "Connection Established." << std::endl;
-
-        // Read data from the client
-        ssize_t bytes_received;
-        while ((bytes_received = recv(_client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
+        if (pollArray[0].revents & POLLIN)
         {
-            buffer[bytes_received] = '\0';  // Null-terminate the string
-            std::cout << "Received from client: " << buffer << std::endl;
-            // Echo the message back to the client (optional)
-            send(_client_fd, buffer, bytes_received, 0);
-        }
-        if (bytes_received == 0) {
-            std::cout << "Client disconnected." << std::endl;
-        } else if (bytes_received == -1) {
-            std::cerr << "Error receiving data from client." << std::endl;
-        }
+		    std::cout << "The server is waiting for a connection ..." << std::endl;
+            _client_fd = accept(_socket_fd, 0x0, 0x0);
+		    if (_client_fd == -1)
+		    	throw (std::logic_error("Error : The accept failed !"));
+            std::cout << "Connection Established." << std::endl;
+
+            // Read data from the client
+            ssize_t bytes_received;
+            while ((bytes_received = recv(_client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
+            {
+                buffer[bytes_received] = '\0';  // Null-terminate the string
+                std::cout << "Received from client: " << buffer << std::endl;
+                // Echo the message back to the client (optional)
+                send(_client_fd, buffer, bytes_received, 0);
+            }
+            if (bytes_received == 0) {
+                std::cout << "Client disconnected." << std::endl;
+            } else if (bytes_received == -1) {
+                std::cerr << "Error receiving data from client." << std::endl;
+            }
         close(_client_fd);
 
 	}
