@@ -150,6 +150,7 @@ void Server::ServerConnection()
                     // Echo the message back to the client
                     send(pollArray[i].fd, "message received.", bytes_received, 0);
                 }
+                "message received."
                 else if (bytes_received == 0)
                 {
                     std::cout << "Client disconnected." << std::endl;
