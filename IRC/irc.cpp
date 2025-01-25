@@ -11,7 +11,7 @@ void    signal_handler(int signal)
     }
 }
 
-void    InputParsing(char **argv)
+int    InputParsing(int argc, char **argv)
 {
     try
     {
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
         std::cerr << "Error : The program started like this ./ircserv port password !" << std::endl;
         return (EXIT_FAILURE);
     }
-    InputParsing(argv);
+    InputParsing(argc, argv);
 
 	signal(SIGINT, signal_handler);
 
