@@ -28,21 +28,18 @@ int Server::startServer()
 	if (_socket_fd == -1)
 	{
 		throw (std::logic_error("Error : The socket creation failed !"));
-        return (EXIT_FAILURE);
 	}
 
     if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
     {
-        throw (std::logic_error("Error: Socket bind failed!");
+        throw (std::logic_error("Error: Socket bind failed!"));
         // close(_socket_fd);
-        return (EXIT_FAILURE);
     }
 
     // Listen for incoming connections
     if (listen(_socket_fd, 5) == -1)
     {
-        std::cerr << "Error: Socket listen failed!" << std::endl;
-        // close(_socket_fd);
+        throw (std::logic_error("Error: Socket listen failed!"));
         return (EXIT_FAILURE);
     }
 
