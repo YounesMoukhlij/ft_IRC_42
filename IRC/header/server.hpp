@@ -14,7 +14,8 @@ class Server
 		std::string						_password;
 		int								_socket_fd;
 		int								_port_number;
-		std::vector<struct pollfd> pollArray;
+
+		std::vector<struct pollfd> 		pollArray;
 
 
 
