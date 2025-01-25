@@ -2,4 +2,4 @@
 
 
 1- Make
-2 - ./
+2 - ./ircserv
