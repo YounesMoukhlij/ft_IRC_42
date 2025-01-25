@@ -68,6 +68,8 @@ void	Server::ServerConnection()
         std::cout << " -> " << _poll_fd << std::endl ;
 
 
+        server_Cls.pollAr[0].fd = server_Cls.socket_connection ;
+        server_Cls.pollAr[0].events = POLLIN ;
 		std::cout << "The server is waiting for a connection ..." << std::endl;
         _client_fd = accept(_socket_fd, 0x0, 0x0);
 		if (_client_fd == -1)
