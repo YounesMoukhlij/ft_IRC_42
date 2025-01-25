@@ -18,6 +18,7 @@ void    InputParsing(char **argv)
         std::cerr << "Error : The port number must be between 1024 and 65535 !" << std::endl;
         exit(EXIT_FAILURE);
     }
+    if (strlen(argv[1]))
 }
 
 int main(int argc, char **argv)
