@@ -13,6 +13,7 @@ class Server
 		int								_poll_fd;
 		std::string						_password;
 		int								_socket_fd;
+		int								_client_fd;
 		int								_port_number;
 
 		std::vector<struct pollfd> 		pollArray;

@@ -78,14 +78,14 @@ void	Server::ServerConnection()
             buffer[bytes_received] = '\0';  // Null-terminate the string
             std::cout << "Received from client: " << buffer << std::endl;
             // Echo the message back to the client (optional)
-            send(client_fd, buffer, bytes_received, 0);
+            send(_client_fd, buffer, bytes_received, 0);
         }
         if (bytes_received == 0) {
             std::cout << "Client disconnected." << std::endl;
         } else if (bytes_received == -1) {
             std::cerr << "Error receiving data from client." << std::endl;
         }
-        close(client_fd);
+        close(_client_fd);
 
 	}
 }
