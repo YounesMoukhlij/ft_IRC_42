@@ -25,14 +25,14 @@ int main(int argc, char **argv)
         return (EXIT_FAILURE);
     }
 
-    // try
-    // {
-    //     server.ServerConnection();
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
+    try
+    {
+        server.ServerConnection();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
 
 
