@@ -90,7 +90,7 @@ void Server::ServerConnection()
         }
 
         // Now check all client sockets for data
-        for (size_t i = 1; i < pollArray.size(); ++i)
+        for (size_t i = 1; i < pollArray.size(); i=)
         {
             // If the client socket has data to read
             if (pollArray[i].revents & POLLIN)
