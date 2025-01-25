@@ -119,13 +119,6 @@ void Server::ServerConnection()
                     // ha lmsg dyalk wsalna ziiiidech nchuffech leekch ash kayn men baaad ? waaaaalo 3a tiriri m3a bnt tmaaaaraaaaa
                 }
                 // if mawsslt ta weza 
-                else if (bytes_received == 0)
-                {
-                    std::cout << "Client disconnected." << std::endl;
-                    close(pollArray[i].fd);  // Close the socket
-                    pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
-                    --i; // ___>> get back to the previous client
-                }
                 else
                 {
                     std::cerr << "Error receiving data from client." << std::endl;
