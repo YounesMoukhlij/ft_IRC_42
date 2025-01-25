@@ -57,24 +57,25 @@ void	Server::setSocketParameter()
 
 void	Server::ServerConnection()
 {
-    Server 
+    Server server;
+
     char    buffer[1024];
 
 	while (_socket_fd != -1)
 	{
-        server._poll_fd = poll(&server.pollArray[0], server.pollArray.size(), -1);
-        std::cout << " -> " << server._poll_fd << std::endl ;
+        _poll_fd = poll(&pollArray[0], pollArray.size(), -1);
+        std::cout << " -> " << _poll_fd << std::endl ;
 
 
 		std::cout << "The server is waiting for a connection ..." << std::endl;
-        server._client_fd = accept(_socket_fd, 0x0, 0x0);
-		if (server._client_fd == -1)
+        _client_fd = accept(_socket_fd, 0x0, 0x0);
+		if (_client_fd == -1)
 			throw (std::logic_error("Error : The accept failed !"));
         std::cout << "Connection Established." << std::endl;
 
         // Read data from the client
         ssize_t bytes_received;
-        while ((bytes_received = recv(server._client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
+        while ((bytes_received = recv(_client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
         {
             buffer[bytes_received] = '\0';  // Null-terminate the string
             std::cout << "Received from client: " << buffer << std::endl;
