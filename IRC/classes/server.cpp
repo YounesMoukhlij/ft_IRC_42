@@ -120,7 +120,7 @@ void Server::ServerConnection()
                 return;  // Handle error and exit the function
             }
 
-            std::cout << "Connection Established." << std::endl;
+            std::cout << "  ~~~ Connection Established. ~~~." << std::endl;
 
             // Add the client socket to the poll array to read data from it
             struct pollfd client_poll;
@@ -134,7 +134,7 @@ void Server::ServerConnection()
         {
             if (pollArray[i].fd < 0)  // Ensure client socket is valid
             {
-                std::cerr << "Invalid client socket detected at index [" << i << std::endl;
+                std::cerr << "Invalid client socket detected at index [" << i << "]" <<  std::endl;
                 continue;  // Skip invalid sockets
             }
 
