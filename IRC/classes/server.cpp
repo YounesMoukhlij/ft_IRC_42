@@ -50,51 +50,14 @@ void	Server::setSocketParameter()
     _client_fd = 0;
 }
 
-
-
-// void	Server::ServerConnection()
-// {
-
-//     // char            buffer[1024];
-
-//     puts("DEBUG HERE");
-//     struct pollfd server_poll;
-//     server_poll.fd = _socket_fd;
-//     server_poll.events = POLLIN;
-//     pollArray.push_back(server_poll);
-
-
-// 	while (_socket_fd != -1)
-// 	{
-//         _poll_fd = poll(&pollArray[0], pollArray.size(), -1);
-//         if (_poll_fd == -1)
-//             throw (std::logic_error("Error : The poll failed !"));
-//         std::cout << " -> " << _poll_fd << std::endl ;
-
-//         if (pollArray[0].revents & POLLIN)
-//         {
-//             _client_fd = accept(_socket_fd, 0x0, 0x0);
-// 		    if (_client_fd == -1)
-// 		    	throw (std::logic_error("Error : The accept failed !"));
-//             std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
-
-//             send(pollArray[0].fd, "buf", 4, 0);
-//         }
-//     }
-
-//     close(_client_fd);
-
-// 	}
-
-
 void Server::ServerConnection()
 {
     char buffer[2048];
 
-    // Initialize pollArray to include the server socket
-    server_poll.fd = _socket_fd;  // Server socket for listening
-    server_poll.events = POLLIN;  // We want to listen for input events
-    pollArray.push_back(server_poll);  // Add server socket to pollArray
+
+    server_poll.fd = _socket_fd;
+    server_poll.events = POLLIN;
+    pollArray.push_back(server_poll);  
 
     while (_socket_fd != -1)
     {
