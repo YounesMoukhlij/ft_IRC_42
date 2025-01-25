@@ -1,20 +1,20 @@
 # ft_irc
 
 
+/br
 1 - Make
-/br
 
+/br
 2 - ./ircserv 9292 younes (examples)
-/br
 
+
+/br
 3 - chose another terminal window
 
 /br
-
 4 - nc localhost 9292
+
 /br
-
-
 5 - send a msg from the client
 
 /br
