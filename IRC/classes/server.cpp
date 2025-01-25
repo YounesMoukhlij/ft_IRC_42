@@ -39,7 +39,7 @@ void    Server::startServer()
 
 
 }
-
+// li fhaam yfahmna m3ah had l3ilm IP
 void	Server::setSocketParameter()
 {
 	_params.ai_family = AF_INET;  // We choose Ipv4
@@ -113,7 +113,7 @@ void Server::ServerConnection()
                     std::cout << "Client disconnected." << std::endl;
                     close(pollArray[i].fd);  // Close the socket
                     pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
-                    --i; // ___>> get back to the 
+                    --i; // ___>> get back to the previous client
                 }
                 else
                 {
