@@ -1,19 +1,18 @@
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = irc.cpp
-	  classes/Server.cpp
-	  classes/Client.cpp
+SRC = irc.cpp \
+	  classes/Server.cpp \
+	  classes/Client.cpp \
 
 OBJ = ${SRC:.cpp=.o}
-
 
 
 NAME = ircserv
 
 all : ${NAME} clean
 
-%.o: %.cpp #${HEADER}
+%.o: %.cpp ${HEADER}
 	@echo "\033[30m Compiling ...\033[0m"
 	@c++ ${CPPFLAGS} -c $< -o $@
 
