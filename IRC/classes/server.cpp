@@ -131,23 +131,23 @@ void Server::ServerConnection()
         }
 
         // Now check all client sockets for data
-            if (pollArray[à].revents & POLLIN)
+            if (pollArray[0].revents & POLLIN)
             {
-                ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
+                ssize_t bytes_received = recv(pollArray[0].fd, buffer, sizeof(buffer) - 1, 0);
                 if (bytes_received > 0)
                 {
                     buffer[bytes_received] = '\0';  // Null-terminate the received message
                     std::cout << "Received from client: " << buffer << std::endl;
 
                     // Echo the message back to the client
-                    send(pollArray[i].fd, buffer, bytes_received, 0);
+                    send(pollArray[0].fd, buffer, bytes_received, 0);
                 }
                 else if (bytes_received == 0)
                 {
                     std::cout << "Client disconnected." << std::endl;
-                    close(pollArray[i].fd);  // Close the socket
-                    pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
-                    --i;  // Adjust index after removal
+                    close(pollArray[0].fd);  // Close the socket
+                    // pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
+                    // --i;  // Adjust index after removal
                 }
                 else
                 {
