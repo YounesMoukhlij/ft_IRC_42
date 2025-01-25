@@ -4,8 +4,10 @@
 
 void    signal_handler(int signal)
 {
-    if (signa
-    (void) signal;
+    if (signal == SIGINT)
+    {
+        
+    }
 }
 
 int main(int argc, char **argv)
