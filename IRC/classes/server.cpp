@@ -27,7 +27,7 @@ int Server::startServer()
 	_socket_fd = socket(AF_INET, SOCK_STREAM , 0);
 	if (_socket_fd == -1)
 	{
-		throw std:: "Error : The socket creation failed !" << std::endl;
+		throw (std::logic_error("Error : The socket creation failed !" << std::endl;
         return (EXIT_FAILURE);
 	}
 
