@@ -131,10 +131,7 @@ void Server::ServerConnection()
         }
 
         // Now check all client sockets for data
-        for (size_t i = 1; i < pollArray.size(); ++i)
-        {
-            // If the client socket has data to read
-            if (pollArray[i].revents & POLLIN)
+            if (pollArray[à].revents & POLLIN)
             {
                 ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
                 if (bytes_received > 0)
@@ -157,6 +154,5 @@ void Server::ServerConnection()
                     std::cerr << "Error receiving data from client." << std::endl;
                 }
             }
-        }
     }
 }
