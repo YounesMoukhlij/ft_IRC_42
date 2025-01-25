@@ -81,6 +81,7 @@ void	Server::ServerConnection()
         while ((bytes_received = recv(_client_fd, buffer, sizeof(buffer) - 1, 0)) > 0)
         {
             buffer[bytes_received] = '\0';  // Null-terminate the string
+            
             std::cout << "Received from client: " << buffer << std::endl;
             // Echo the message back to the client (optional)
             send(_client_fd, buffer, bytes_received, 0);
