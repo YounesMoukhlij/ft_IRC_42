@@ -89,7 +89,7 @@ void	Server::setSocketParameter()
 
 void Server::ServerConnection()
 {
-    char buffer[1024];
+    char buffer[2048];
 
     // Initialize pollArray to include the server socket
     server_poll.fd = _socket_fd;  // Server socket for listening
@@ -99,8 +99,8 @@ void Server::ServerConnection()
     while (_socket_fd != -1)
     {
         // Wait for events
-        int poll_fd = poll(&pollArray[0], pollArray.size(), -1);
-        if (poll_fd == -1)
+        _poll_fd = poll(&pollArray[0], pollArray.size(), -1);
+        if (_poll_fd == -1)
             throw (std::logical_error("Error: The poll failed!"));
 
 
