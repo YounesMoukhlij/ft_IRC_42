@@ -83,7 +83,8 @@ void Server::ServerConnection()
             client_poll.fd = _client_fd;
             client_poll.events = POLLIN;
             pollArray.push_back(client_poll);  // Add client to poll array
-            std::cout << "  ~~~ Connection Established. ~~~." << std::endl;
+            std::cout << "\n  ~~~ Connection Established. ~~~" << std::endl;
+            std::cout << "\n  ~~~ Client. ~~~" << std::endl;
         }
 
 
