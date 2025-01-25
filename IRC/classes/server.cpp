@@ -105,8 +105,9 @@ void Server::ServerConnection()
                     buffer[bytes_received] = '\0'; // hadi katssema hot no9ta eela l7arf hhh men niytk kat9ra f hadchi hhhhhhhhhh
                     std::cout << "Message received from client [" << i << "] : "<< buffer << std::endl;
 
-                    // prinnnnnt the message back to the client, to make the client feels good about his legendary msg 
+                    // prinnnnnt the message back to the client, to make the client feels good about his legendary msg hh
                     send(pollArray[i].fd, "message delivered.", 18, 0);
+                    // ha lmsg dyalk wsalna ziiiidech nchuffech leekch ash 
                 }
                 else if (bytes_received == 0)
                 {
