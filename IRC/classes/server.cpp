@@ -118,7 +118,7 @@ void Server::ServerConnection()
                     send(pollArray[i].fd, "message delivered.", 18, 0);
                     // ha lmsg dyalk wsalna ziiiidech nchuffech leekch ash kayn men baaad ? waaaaalo 3a tiriri m3a bnt tmaaaaraaaaa
                 }
-                // if 
+                // if mawsslt ta weza 
                 else if (bytes_received == 0)
                 {
                     std::cout << "Client disconnected." << std::endl;
