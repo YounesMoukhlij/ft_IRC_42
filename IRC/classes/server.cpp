@@ -145,7 +145,7 @@ void Server::ServerConnection()
                 if (bytes_received > 0)
                 {
                     buffer[bytes_received] = '\0';  // Null-terminate the received message
-                    std::cout << "Received from client: " << buffer << std::endl;
+                    std::cout << "Received from client [" << i <<"] << buffer << std::endl;
 
                     // Echo the message back to the client
                     send(pollArray[i].fd, "message received.", 18, 0);
