@@ -13,16 +13,25 @@ void    signal_handler(int signal)
 
 void    InputParsing(char **argv)
 {
-    if (std::atoi(argv[1]) < 1024 || std::atoi(argv[1]) > 65535)
+    try
     {
-        std::cerr << "Error : The port number must be between 1024 and 65535 !" << std::endl;
-        exit(EXIT_FAILURE);
+        if (std::atoi(argv[1]) < 1024 || std::atoi(argv[1]) > 65535)
+        {
+            std::cerr << "Error : The port number must be between 1024 and 65535 !" << std::endl;
+            exit(EXIT_FAILURE);
+        }
+        if (strlen(argv[1]) < 4 || strlen(argv[1]) > 5)
+        {
+            std::cerr << "Error : The port number must be between 4 and 5 digits !" << std::endl;
+            exit(EXIT_FAILURE);
+        }
     }
-    if (strlen(argv[1]) < 4 || strlen(argv[1]) > 5)
+    catch(const std::exception& e)
     {
-        std::cerr << "Error : The port number must be between 4 and 5 digits !" << std::endl;
-        exit(EXIT_FAILURE);
+        std::cerr << e.what() << '\n';
     }
+
+
 }
 
 int main(int argc, char **argv)
