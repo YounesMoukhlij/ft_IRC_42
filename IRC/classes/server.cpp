@@ -81,26 +81,9 @@ void	Server::ServerConnection()
 		    if (_client_fd == -1)
 		    	throw (std::logic_error("Error : The accept failed !"));
             std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
-            ssize_t bytes_received = recv(pollArray[0].fd, buffer, sizeof(buffer) - 1, 0);
-            if (bytes_received > 0)
-                {
-                    buffer[bytes_received] = '\0';  // Null-terminate the received message
-                    std::cout << "Received from client: " << buffer << std::endl;
 
-                    // Echo the message back to the client
                     send(pollArray[0].fd, buffer, bytes_received, 0);
-                }
-                else if (bytes_received == 0)
-                {
-                    std::cout << "Client disconnected." << std::endl;
-                    close(pollArray[0].fd);  // Close the socket
-                    // pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
-                    // --i;  // Adjust index after removal
-                }
-                else
-                {
-                    std::cerr << "Error receiving data from client." << std::endl;
-                }
+        }
         }
     }
     close(_client_fd);
