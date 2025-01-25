@@ -9,10 +9,11 @@ class Server
 {
 	private:
 		std::string						_port;
-		int								_port_number;
+		struct addrinfo					_params;
+		int								_poll_fd;
 		std::string						_password;
 		int								_socket_fd;
-		struct addrinfo					_params;
+		int								_port_number;
 		std::vector<struct pollfd> pollArray;
 
 
