@@ -58,6 +58,10 @@ void	Server::ServerConnection()
     // char            buffer[1024];
 
     puts("DEBUG HERE");
+      struct pollfd server_poll;
+    server_poll.fd = _socket_fd;  // Server socket for listening
+    server_poll.events = POLLIN;  // We want to listen for input events
+    pollArray.push_back(server_poll);
     pollArray[0].fd = _socket_fd ;
     pollArray[0].events = POLLIN ;
 
