@@ -94,7 +94,7 @@ void Server::ServerConnection()
 
         /*
             --> partie two
-            -- > discussion 
+            -- > discussion between many clients and this damned server
         */
         for (size_t i = 1; i < pollArray.size(); ++i)
         {
@@ -107,6 +107,7 @@ void Server::ServerConnection()
             // If the client socket has data to read from the serverrr
             if (pollArray[i].revents & POLLIN)
             {
+                // ila wsl mssg men eend client had recv katkhdm
                 ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
                 if (bytes_received > 0)
                 {
@@ -117,6 +118,7 @@ void Server::ServerConnection()
                     send(pollArray[i].fd, "message delivered.", 18, 0);
                     // ha lmsg dyalk wsalna ziiiidech nchuffech leekch ash kayn men baaad ? waaaaalo 3a tiriri m3a bnt tmaaaaraaaaa
                 }
+                // if 
                 else if (bytes_received == 0)
                 {
                     std::cout << "Client disconnected." << std::endl;
