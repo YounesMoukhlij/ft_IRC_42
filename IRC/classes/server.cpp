@@ -103,7 +103,7 @@ void Server::ServerConnection()
                 if (bytes_received > 0)
                 {
                     buffer[bytes_received] = '\0';
-                    std::cout << "Received from client [" << i << "] "<< buffer << std::endl;
+                    std::cout << "Message received from client [" << i << "] : "<< buffer << std::endl;
 
                     // prinnnnnt the message back to the client
                     send(pollArray[i].fd, "message received.", 18, 0);
