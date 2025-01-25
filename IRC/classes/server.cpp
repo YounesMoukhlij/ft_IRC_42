@@ -82,7 +82,7 @@ void	Server::ServerConnection()
 		    	throw (std::logic_error("Error : The accept failed !"));
             std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
         }
-    // }
+    }
     // close(_client_fd);
 
 	}
