@@ -57,7 +57,7 @@ void Server::ServerConnection()
 
     server_poll.fd = _socket_fd;
     server_poll.events = POLLIN;
-    pollArray.push_back(server_poll);  
+    pollArray.push_back(server_poll);
 
     while (_socket_fd != -1)
     {
