@@ -108,12 +108,9 @@ void Server::ServerConnection()
         if (pollArray[0].revents & POLLIN)
         {
             std::cout << "The server is waiting for a connection ..." << std::endl;
-            _client_fd = accept(_socket_fd, nullptr, nullptr);
+            _client_fd = accept(_socket_fd, 0, 0);
             if (_client_fd == -1)
-            {
-                std::cerr << "Error: The accept failed!" << std::endl;
-                return;  // Handle error and exit the function
-            }
+                throw (std::logical_error("Error: The accept failed!"));
 
             std::cout << "  ~~~ Connection Established. ~~~." << std::endl;
 
