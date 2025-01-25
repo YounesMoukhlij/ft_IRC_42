@@ -55,7 +55,7 @@ void	Server::setSocketParameter()
 void	Server::ServerConnection()
 {
 
-    char            buffer[1024];
+    // char            buffer[1024];
 
     puts("DEBUG HERE");
     struct pollfd server_poll;
@@ -81,8 +81,8 @@ void	Server::ServerConnection()
 		    if (_client_fd == -1)
 		    	throw (std::logic_error("Error : The accept failed !"));
             std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
-            buffer = "YOUNES";
-            
+            char *buffer[] = "YOUNES";
+
                     send(pollArray[0].fd, buffer, strlen(buffer), 0);
         }
     }
