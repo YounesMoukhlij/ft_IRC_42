@@ -13,6 +13,8 @@ class Server
 		std::string						_password;
 		int								_socket_fd;
 		struct addrinfo					_params;
+		std::vector<struct pollfd> pollAr;
+
 
 
 
