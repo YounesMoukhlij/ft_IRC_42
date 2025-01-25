@@ -69,19 +69,16 @@ void	Server::ServerConnection()
         std::cout << " -> " << _poll_fd << std::endl ;
 
 
-        if (pollArray[0].revents & POLLIN)
-        {
-		    std::cout << "The server is waiting for a connection ..." << std::endl;
-            _client_fd = accept(_socket_fd, 0x0, 0x0);
-		    if (_client_fd == -1)
-		    	throw (std::logic_error("Error : The accept failed !"));
-            std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
-
-
-
-            }
-        }
-        close(_client_fd);
+        // if (pollArray[0].revents & POLLIN)
+        // {
+		//     std::cout << "The server is waiting for a connection ..." << std::endl;
+        //     _client_fd = accept(_socket_fd, 0x0, 0x0);
+		//     if (_client_fd == -1)
+		//     	throw (std::logic_error("Error : The accept failed !"));
+        //     std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
+        // }
+    }
+    close(_client_fd);
 
 	}
 
