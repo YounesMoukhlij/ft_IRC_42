@@ -49,6 +49,8 @@ void	Server::setSocketParameter()
 	_params.ai_socktype = SOCK_STREAM; // We choose to work with TCP stream sockets
 	_params.ai_flags = AI_PASSIVE; // We choose to work with TCP stream sockets
     _port_number = std::stoi(_port);
+    _poll_fd = 0;
+    _client_fd = 0;
 }
 
 
