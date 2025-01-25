@@ -78,7 +78,22 @@ void	Server::ServerConnection()
             std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
 
 
-            // Read data from the client
+
+            }
+        }
+        close(_client_fd);
+
+	}
+
+
+void	Server::ShutServer()
+{
+    close(_socket_fd);
+}
+
+
+
+    // Read data from the client
             // ssize_t bytes_received = recv(pollArray[0].fd, buffer, sizeof(buffer) - 1, 0);
             //     if (bytes_received > 0)
             //     {
@@ -99,16 +114,3 @@ void	Server::ServerConnection()
             //     {
             //         std::cerr << "Error receiving data from client." << std::endl;
             //     }
-            }
-        }
-        close(_client_fd);
-
-	}
-
-
-void	Server::ShutServer()
-{
-    close(_socket_fd);
-}
-
-
