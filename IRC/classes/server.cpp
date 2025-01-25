@@ -78,12 +78,12 @@ void Server::ServerConnection()
             if (_client_fd == -1)
                 throw (std::logic_error("Error: The accept failed!"));
 
-            std::cout << "  ~~~ Connection Established. ~~~." << std::endl;
 
             // Add the client socket to the poll array to read data from it
             client_poll.fd = _client_fd;
             client_poll.events = POLLIN;
             pollArray.push_back(client_poll);  // Add client to poll array
+            std::cout << "  ~~~ Connection Established. ~~~." << std::endl;
         }
 
 
