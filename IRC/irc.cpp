@@ -17,9 +17,8 @@ void    InputParsing(char **argv)
     {
         if (std::atoi(argv[1]) < 1024 || std::atoi(argv[1]) > 65535)
         {
-            throw
-            std::cerr << "Error : The port number must be between 1024 and 65535 !" << std::endl;
-            exit(EXIT_FAILURE);
+            
+            throw std::logic_error("Error : The port number must be between 1024 and 65535 !");
         }
         if (strlen(argv[1]) < 4 || strlen(argv[1]) > 5)
         {
