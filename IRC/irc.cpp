@@ -13,7 +13,7 @@ void    signal_handler(int signal)
 
 int isDigit(char *str)
 {
-    for (int i = 0;i < strlen(str);i++)
+    for (size_t i = 0;i < strlen(str);i++)
         if (std::isdigit(str[i]))
             return (0);
     return (1);
