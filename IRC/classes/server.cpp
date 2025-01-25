@@ -81,9 +81,7 @@ void	Server::ServerConnection()
             std::cout << "Connection Established." << std::endl;
 
             // Read data from the client
-            if (pollArray[0].revents & POLLIN)
-            {
-                ssize_t bytes_received = recv(pollArray[0].fd, buffer, sizeof(buffer) - 1, 0);
+            ssize_t bytes_received = recv(pollArray[0].fd, buffer, sizeof(buffer) - 1, 0);
                 if (bytes_received > 0)
                 {
                     buffer[bytes_received] = '\0';  // Null-terminate the received message
