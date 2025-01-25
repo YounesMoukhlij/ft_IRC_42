@@ -61,7 +61,7 @@ void Server::ServerConnection()
     server_poll.events = POLLIN;
     pollArray.push_back(server_poll);
     int j = 0;
-    // while maa7ad socket khdama lmotor khdaam kayt7aam f ram eela walo, irc galek 
+    // while maa7ad socket khdama lmotor khdaam kayt7aam f ram eela walo, irc galek hh  rslna lmsg w dwina bkri
     // while fiha kulchi, connection between clients and this server
     while (_socket_fd != -1)
     {
@@ -71,7 +71,10 @@ void Server::ServerConnection()
             throw (std::logic_error("Error: The poll failed!"));
 
 
-        // Check if the server socket is ready (new connection)
+        /*
+            --> partie one
+            -- > Check if the server socket is ready (new connection) !!!!!
+        */
         if (pollArray[0].revents & POLLIN)
         {
             std::cout << "The server is waiting for a connection ..." << std::endl;
@@ -136,24 +139,3 @@ void	Server::ShutServer()
 
 
 
-    // Read data from the client
-            // ssize_t bytes_received = recv(pollArray[0].fd, buffer, sizeof(buffer) - 1, 0);
-            //     if (bytes_received > 0)
-            //     {
-            //         buffer[bytes_received] = '\0';  // Null-terminate the received message
-            //         std::cout << "Received from client: " << buffer << std::endl;
-
-            //         // Echo the message back to the client
-            //         send(pollArray[0].fd, buffer, bytes_received, 0);
-            //     }
-            //     else if (bytes_received == 0)
-            //     {
-            //         std::cout << "Client disconnected." << std::endl;
-            //         close(pollArray[0].fd);  // Close the socket
-            //         // pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
-            //         // --i;  // Adjust index after removal
-            //     }
-            //     else
-            //     {
-            //         std::cerr << "Error receiving data from client." << std::endl;
-            //     }
