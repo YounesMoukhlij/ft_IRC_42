@@ -19,15 +19,13 @@ void    InputParsing(char **argv)
             throw std::logic_error("Error : The port number must be between 1024 and 65535 !");
         if (strlen(argv[1]) < 4 || strlen(argv[1]) > 5)
             throw std::logic_error("Error : The port number must be between 4 and 5 digits !");
-        {
-            std::cerr << "" << std::endl;
-            exit(EXIT_FAILURE);
-        }
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        return (1);
     }
+    return (0);
 
 
 }
