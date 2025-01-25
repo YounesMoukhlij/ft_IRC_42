@@ -63,8 +63,7 @@ void Server::ServerConnection()
     int j = 0;
     while (_socket_fd != -1)
     {
-        // Wait for events
-        puts("Waiting for events ...");
+        // Wait for clients ,, the poll handles I/O of a socket
         _poll_fd = poll(&pollArray[0], pollArray.size(), -1);
         if (_poll_fd == -1)
             throw (std::logic_error("Error: The poll failed!"));
