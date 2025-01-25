@@ -119,7 +119,7 @@ void	Server::ServerConnection()
         close(_client_fd);
 
 	}
-}
+
 
 void	Server::ShutServer()
 {
