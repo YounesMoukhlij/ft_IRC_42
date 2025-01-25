@@ -92,7 +92,10 @@ void Server::ServerConnection()
             std::cout << "\n  ~~~ Client : [" << j << "]" << std::endl;
         }
 
-
+        /*
+            --> partie two
+            -- > discussion 
+        */
         for (size_t i = 1; i < pollArray.size(); ++i)
         {
             if (pollArray[i].fd < 0) // JUST making sure if the fd is correctto
