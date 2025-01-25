@@ -83,8 +83,8 @@ void Server::ServerConnection()
             pollArray.push_back(client_poll);  // Add client to poll array
         }
 
-        // Now check all client sockets for data
-        for (size_t i = 1; i < pollArray.size(); ++i)  // Start from 1 to skip server socket
+
+        for (size_t i = 1; i < pollArray.size(); ++i)
         {
             if (pollArray[i].fd < 0)  // Ensure client socket is valid
             {
@@ -98,10 +98,10 @@ void Server::ServerConnection()
                 ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
                 if (bytes_received > 0)
                 {
-                    buffer[bytes_received] = '\0';  // Null-terminate the received message
+                    buffer[bytes_received] = '\0';
                     std::cout << "Received from client [" << i << "] "<< buffer << std::endl;
 
-                    // Echo the message back to the client
+                    // prinnnnnt the message back to the client
                     send(pollArray[i].fd, "message received.", 18, 0);
                 }
                 else if (bytes_received == 0)
