@@ -55,11 +55,11 @@ void	Server::setSocketParameter()
 void	Server::ServerConnection()
 {
 
-    char            buffer[1024];
+    // char            buffer[1024];
 
     puts("DEBUG HERE");
-    // pollArray[0].fd = _socket_fd ;
-    // pollArray[0].events = POLLIN ;
+    pollArray[0].fd = _socket_fd ;
+    pollArray[0].events = POLLIN ;
 
 	while (_socket_fd != -1)
 	{
@@ -75,7 +75,8 @@ void	Server::ServerConnection()
             _client_fd = accept(_socket_fd, 0x0, 0x0);
 		    if (_client_fd == -1)
 		    	throw (std::logic_error("Error : The accept failed !"));
-            std::cout << "Connection Established." << std::endl;
+            std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
+
 
             // Read data from the client
             // ssize_t bytes_received = recv(pollArray[0].fd, buffer, sizeof(buffer) - 1, 0);
