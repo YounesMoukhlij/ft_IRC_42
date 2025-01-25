@@ -59,6 +59,8 @@ void	Server::ServerConnection()
 {
 
     char    buffer[1024];
+    pollArray[0].fd = _socket_fd ;
+    pollArray[0].events = POLLIN ;
 
 	while (_socket_fd != -1)
 	{
@@ -68,8 +70,7 @@ void	Server::ServerConnection()
         std::cout << " -> " << _poll_fd << std::endl ;
 
 
-        pollArray[0].fd = _socket_fd ;
-        pollArray[0].events = POLLIN ;
+
 		std::cout << "The server is waiting for a connection ..." << std::endl;
         _client_fd = accept(_socket_fd, 0x0, 0x0);
 		if (_client_fd == -1)
