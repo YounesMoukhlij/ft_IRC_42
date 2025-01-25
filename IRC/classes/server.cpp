@@ -61,6 +61,7 @@ void Server::ServerConnection()
     server_poll.events = POLLIN;
     pollArray.push_back(server_poll);
     int j = 0;
+    // while maa7ad 
     while (_socket_fd != -1)
     {
         // Wait for clients ,, the poll handles I/O of a socket
