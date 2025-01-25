@@ -39,7 +39,7 @@ void    Server::startServer()
 
 
 }
-// li fhaam yfahmna m3ah had l3ilm IP
+// li fhaam yfahmna m3ah had l3ilm  ... IPV4 who am i to understand this *_*
 void	Server::setSocketParameter()
 {
 	_params.ai_family = AF_INET;  // We choose Ipv4
@@ -102,7 +102,7 @@ void Server::ServerConnection()
                 ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
                 if (bytes_received > 0)
                 {
-                    buffer[bytes_received] = '\0';
+                    buffer[bytes_received] = '\0'; // hadi katssema hot n
                     std::cout << "Message received from client [" << i << "] : "<< buffer << std::endl;
 
                     // prinnnnnt the message back to the client
