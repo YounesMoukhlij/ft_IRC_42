@@ -109,7 +109,7 @@ void Server::ServerConnection()
                     std::cout << "Client disconnected." << std::endl;
                     close(pollArray[i].fd);  // Close the socket
                     pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
-                    --i;  // Adjust index after removal
+                    --i;
                 }
                 else
                 {
