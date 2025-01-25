@@ -15,6 +15,8 @@ class Server
 		int								_socket_fd;
 		int								_client_fd;
 		int								_port_number;
+		struct pollfd server_poll;
+
 
 		// Poll parameters :
 		std::vector<struct pollfd>::iterator	end;
