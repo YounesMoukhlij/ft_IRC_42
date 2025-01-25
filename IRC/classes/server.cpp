@@ -102,7 +102,7 @@ void Server::ServerConnection()
                 ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
                 if (bytes_received > 0)
                 {
-                    buffer[bytes_received] = '\0'; // hadi katssema hot n
+                    buffer[bytes_received] = '\0'; // hadi katssema hot no9ta eela l7arf hhh men niytk kat9ra f hadchi hhhhhhhhhh
                     std::cout << "Message received from client [" << i << "] : "<< buffer << std::endl;
 
                     // prinnnnnt the message back to the client
