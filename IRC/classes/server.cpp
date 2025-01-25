@@ -60,7 +60,7 @@ void	Server::ServerConnection()
 
     char            buffer[1024];
 
-
+    puts("DEBUG HERE");
     pollArray[0].fd = _socket_fd ;
     pollArray[0].events = POLLIN ;
 
