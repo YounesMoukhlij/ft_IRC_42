@@ -17,6 +17,7 @@ int    InputParsing(int argc, char **argv)
     {
         if (argc != 3)
             throw std::logic_error("Error : The program started like this ./ircserv port password !\n");
+        if (isDigit())
         if (std::atoi(argv[1]) < 1024 || std::atoi(argv[1]) > 65535)
             throw std::logic_error("Error : The port number must be between 1024 and 65535 !\n");
         if (strlen(argv[1]) < 4 || strlen(argv[1]) > 5)
