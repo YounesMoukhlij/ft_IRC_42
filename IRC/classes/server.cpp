@@ -58,15 +58,16 @@ void	Server::ServerConnection()
     // char            buffer[1024];
 
     puts("DEBUG HERE");
-    // pollArray[0].fd = _socket_fd ;
-    // pollArray[0].events = POLLIN ;
+    pollArray[0].fd = _socket_fd ;
+    pollArray[0].events = POLLIN ;
 
-	while (_socket_fd != -1)
-	{
+    printf("")
+	// while (_socket_fd != -1)
+	// {
         // _poll_fd = poll(&pollArray[0], pollArray.size(), -1);
         // if (_poll_fd == -1)
         //     throw (std::logic_error("Error : The poll failed !"));
-        std::cout << " -> " << _poll_fd << std::endl ;
+        // std::cout << " -> " << _poll_fd << std::endl ;
 
 
         // if (pollArray[0].revents & POLLIN)
@@ -77,8 +78,8 @@ void	Server::ServerConnection()
 		//     	throw (std::logic_error("Error : The accept failed !"));
         //     std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
         // }
-    }
-    close(_client_fd);
+    // }
+    // close(_client_fd);
 
 	}
 
