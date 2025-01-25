@@ -13,7 +13,10 @@ HEADER = ./header/irc.hpp \
 
 NAME = ircserv
 
-all : ${NAME} ./ircserv 9292 younes
+all : ${NAME} play
+
+play :
+	 ./ircserv 9292 younes
 
 %.o: %.cpp ${HEADER}
 	@echo "\033[30m Compiling ...\033[0m"
