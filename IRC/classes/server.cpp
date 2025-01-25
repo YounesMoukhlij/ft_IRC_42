@@ -148,7 +148,7 @@ void Server::ServerConnection()
                     std::cout << "Received from client: " << buffer << std::endl;
 
                     // Echo the message back to the client
-                    send(pollArray[i].fd, buffer, bytes_received, 0);
+                    send(pollArray[i].fd, "message received.", bytes_received, 0);
                 }
                 else if (bytes_received == 0)
                 {
