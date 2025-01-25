@@ -61,7 +61,8 @@ void	Server::ServerConnection()
     pollArray[0].fd = _socket_fd ;
     pollArray[0].events = POLLIN ;
 
-    printf("")
+    printf("%d\n", pollArray[0].fd);
+    printf("%d\n", pollArray[0].events);
 	// while (_socket_fd != -1)
 	// {
         // _poll_fd = poll(&pollArray[0], pollArray.size(), -1);
