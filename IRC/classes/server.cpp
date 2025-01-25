@@ -102,11 +102,10 @@ void Server::ServerConnection()
         int poll_fd = poll(&pollArray[0], pollArray.size(), -1);
         if (poll_fd == -1)
         {
-            std::cerr << "Error: The poll failed!" << std::endl;
+            throw << "Error: The poll failed!" << std::endl;
             return;  // Handle error and exit the function
         }
 
-        std::cout << " -> " << poll_fd << std::endl;
 
         // Check if the server socket is ready (new connection)
         if (pollArray[0].revents & POLLIN)
