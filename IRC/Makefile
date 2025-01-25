@@ -1,7 +1,10 @@
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = irc.cpp classes/server.cpp classes/client.cpp
+SRC = irc.cpp
+	  classes/Server.cpp
+	  classes/Client.cpp
+
 OBJ = ${SRC:.cpp=.o}
 
 
