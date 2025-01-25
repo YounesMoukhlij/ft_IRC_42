@@ -9,7 +9,7 @@ class Server
 {
 	private:
 		std::string						_port;
-		int								
+		int								_port_number;
 		std::string						_password;
 		int								_socket_fd;
 		struct addrinfo					_params;
