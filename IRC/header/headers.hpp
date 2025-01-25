@@ -7,6 +7,8 @@
 # include <iostream>
 # include <poll.h>
 # include <netdb.h>
+#include "Server.hpp"
+#include "Client.hpp"
 
 
 

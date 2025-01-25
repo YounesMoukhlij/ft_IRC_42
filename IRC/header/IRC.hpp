@@ -1,5 +1,5 @@
 
 #pragma once
 
-#include "Server.hpp"
-#include "Client.hpp"
+
+#include "Headers.hpp"

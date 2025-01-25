@@ -1,6 +1,6 @@
 
 
-#include "../header/Server.hpp"
+#include "../header/Headers.hpp"
 
 Server::Server(std::string port, std::string password) : _port(port), _password(password)
 {
@@ -25,7 +25,6 @@ int Server::startServer()
 
 
 	_socket_fd = socket(AF_INET, SOCK_STREAM , 0);
-	// _socket_fd = socket(para->ai_family, para->ai_socktype, para->ai_protocol);
 	if (_socket_fd == -1)
 	{
 		std::cerr << "Error : The socket creation failed !" << std::endl;
@@ -33,7 +32,6 @@ int Server::startServer()
 	}
 
     if (bind(_socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
-    // if (bind(_socket_fd, socketPara->ai_addr, socketPara->ai_addrlen) == -1)
     {
         std::cerr << "Error: Socket bind failed!" << std::endl;
         // close(_socket_fd);
