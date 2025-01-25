@@ -57,7 +57,6 @@ void	Server::setSocketParameter()
 
 void	Server::ServerConnection()
 {
-    Server server;
 
     char    buffer[1024];
 
