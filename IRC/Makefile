@@ -13,7 +13,7 @@ HEADER = ./header/irc.hpp \
 
 NAME = ircserv
 
-all : ${NAME} play
+all : ${NAME} 
 
 play :
 	 ./ircserv 9292 younes
