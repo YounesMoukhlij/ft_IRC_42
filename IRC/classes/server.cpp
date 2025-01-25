@@ -82,6 +82,7 @@ void Server::ServerConnection()
             client_poll.fd = _client_fd;
             client_poll.events = POLLIN;
             pollArray.push_back(client_poll);  // Add client to poll array
+        }
 
 
         for (size_t i = 1; i < pollArray.size(); ++i)
@@ -116,7 +117,6 @@ void Server::ServerConnection()
                     std::cerr << "Error receiving data from client." << std::endl;
                 }
             }
-        }
         }
     }
 }
