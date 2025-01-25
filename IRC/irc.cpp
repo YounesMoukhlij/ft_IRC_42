@@ -11,13 +11,19 @@ void    signal_handler(int signal)
     }
 }
 
+int isDigit(char *str)
+{
+    
+}
+
 int    InputParsing(int argc, char **argv)
 {
     try
     {
         if (argc != 3)
             throw std::logic_error("Error : The program started like this ./ircserv port password !\n");
-        if (isDigit())
+        if (isDigit(argv[1]) == false)
+            throw std::logic_error("Error : The port number must be a number !\n");
         if (std::atoi(argv[1]) < 1024 || std::atoi(argv[1]) > 65535)
             throw std::logic_error("Error : The port number must be between 1024 and 65535 !\n");
         if (strlen(argv[1]) < 4 || strlen(argv[1]) > 5)
