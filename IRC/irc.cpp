@@ -4,6 +4,7 @@
 
 void    signal_handler(int signal)
 {
+    if (signa
     (void) signal;
 }
 
