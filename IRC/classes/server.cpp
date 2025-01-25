@@ -90,13 +90,13 @@ void Server::ServerConnection()
 
         for (size_t i = 1; i < pollArray.size(); ++i)
         {
-            if (pollArray[i].fd < 0) 
+            if (pollArray[i].fd < 0) // JUST making sure if the fd is correctto
             {
                 std::cerr << "Invalid client socket detected at index [" << i << "]" <<  std::endl;
-                continue;  // Skip invalid sockets
+                continue;  // we Skip invalid sockets
             }
 
-            // If the client socket has data to read
+            // If the client socket has data to read from the serverrr
             if (pollArray[i].revents & POLLIN)
             {
                 ssize_t bytes_received = recv(pollArray[i].fd, buffer, sizeof(buffer) - 1, 0);
@@ -113,7 +113,7 @@ void Server::ServerConnection()
                     std::cout << "Client disconnected." << std::endl;
                     close(pollArray[i].fd);  // Close the socket
                     pollArray.erase(pollArray.begin() + i);  // Remove client from poll array
-                    --i;
+                    --i; // ___>> get back to the 
                 }
                 else
                 {
