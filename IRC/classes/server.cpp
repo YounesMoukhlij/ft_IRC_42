@@ -57,11 +57,12 @@ void	Server::setSocketParameter()
 
 void	Server::ServerConnection()
 {
+    Server 
     char    buffer[1024];
 
 	while (_socket_fd != -1)
 	{
-        Server._poll_fd = poll(&server.pollArray[0], server.pollArray.size(), -1);
+        server._poll_fd = poll(&server.pollArray[0], server.pollArray.size(), -1);
         std::cout << " -> " << server._poll_fd << std::endl ;
 
 
