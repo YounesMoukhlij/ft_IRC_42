@@ -6,4 +6,4 @@
 3 - chose another terminal window
 4 - nc localhost 9292
 5 - send a msg from the client
-6 - enjoy the emptyness
+6 - enjoy the emptiness
