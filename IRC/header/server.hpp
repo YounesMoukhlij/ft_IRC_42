@@ -17,9 +17,9 @@ class Server
 		int								_port_number;
 
 		// Poll parameters :
-		std::vector<struct pollfd> 				pollArray;
+		std::vector<struct pollfd>::iterator	end;
 		std::vector<struct pollfd>::iterator	start;
-		std::vector<struct pollfd>::iterator	end  ;
+		std::vector<struct pollfd> 				pollArray;
 
 
 
