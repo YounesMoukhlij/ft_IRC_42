@@ -94,6 +94,7 @@ void	Server::ServerConnection()
             } else if (bytes_received == -1) {
                 std::cerr << "Error receiving data from client." << std::endl;
             }
+        }
         close(_client_fd);
 
 	}
