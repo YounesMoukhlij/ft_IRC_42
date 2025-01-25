@@ -34,12 +34,8 @@ int    InputParsing(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3)
-    {
-        std::cerr << "Error : The program started like this ./ircserv port password !" << std::endl;
+    if (InputParsing(argc, argv))
         return (EXIT_FAILURE);
-    }
-    InputParsing(argc, argv);
 
 	signal(SIGINT, signal_handler);
 
