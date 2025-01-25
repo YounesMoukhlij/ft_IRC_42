@@ -11,7 +11,14 @@ void    signal_handler(int signal)
     }
 }
 
-void    InputParsing(cha)
+void    InputParsing(char **argv)
+{
+    if (std::atoi(argv[1]) < 1024 || std::atoi(argv[1]) > 65535)
+    {
+        std::cerr << "Error : The port number must be between 1024 and 65535 !" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
 
 int main(int argc, char **argv)
 {
