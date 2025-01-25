@@ -90,7 +90,7 @@ void Server::ServerConnection()
 
         for (size_t i = 1; i < pollArray.size(); ++i)
         {
-            if (pollArray[i].fd < 0)  // Ensure client socket is valid
+            if (pollArray[i].fd < 0) 
             {
                 std::cerr << "Invalid client socket detected at index [" << i << "]" <<  std::endl;
                 continue;  // Skip invalid sockets
