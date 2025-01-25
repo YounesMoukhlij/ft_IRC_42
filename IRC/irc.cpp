@@ -6,7 +6,7 @@ void    signal_handler(int signal)
 {
     if (signal == SIGINT)
     {
-        std::cout << "Welcome any time"
+        std::cout << "Welcome any time." << std::endl;
         exit(0);
     }
 }
