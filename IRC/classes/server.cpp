@@ -60,6 +60,8 @@ void	Server::ServerConnection()
 
 	while (_socket_fd != -1)
 	{
+        server_Cls.poll_returnV = poll(&server_Cls.pollAr[0], server_Cls.pollAr.size(), -1);
+
 		std::cout << "The server is waiting for a connection ..." << std::endl;
         client_fd = accept(_socket_fd, 0x0, 0x0);
 		if (client_fd == -1)
