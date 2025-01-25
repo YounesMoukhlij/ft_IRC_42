@@ -13,7 +13,10 @@ void    signal_handler(int signal)
 
 int isDigit(char *str)
 {
-    
+    for (int i = 0;i < strlen(str);i++)
+    {
+        if (isstr[i] )
+    }
 }
 
 int    InputParsing(int argc, char **argv)
