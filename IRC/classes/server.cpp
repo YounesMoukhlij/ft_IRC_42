@@ -107,7 +107,7 @@ void Server::ServerConnection()
 
                     // prinnnnnt the message back to the client, to make the client feels good about his legendary msg hh
                     send(pollArray[i].fd, "message delivered.", 18, 0);
-                    // ha lmsg dyalk wsalna ziiiidech nchuffech leekch ash 
+                    // ha lmsg dyalk wsalna ziiiidech nchuffech leekch ash kayn men baaad ? waaaaalo 3a tiriri m3a bnt tmaaaaraaaaa
                 }
                 else if (bytes_received == 0)
                 {
