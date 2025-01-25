@@ -81,11 +81,11 @@ void	Server::ServerConnection()
 		    if (_client_fd == -1)
 		    	throw (std::logic_error("Error : The accept failed !"));
             std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
-
+            buffer = "YOUNES";
                     send(pollArray[0].fd, buffer, bytes_received, 0);
         }
-        }
     }
+
     close(_client_fd);
 
 	}
