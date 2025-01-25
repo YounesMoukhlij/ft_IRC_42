@@ -58,7 +58,9 @@ void	Server::setSocketParameter()
 void	Server::ServerConnection()
 {
 
-    char    buffer[1024];
+    char            buffer[1024];
+
+    
     pollArray[0].fd = _socket_fd ;
     pollArray[0].events = POLLIN ;
 
