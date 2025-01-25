@@ -108,15 +108,6 @@ void Server::ServerConnection()
     pollArray[0].fd = _socket_fd;
     pollArray[0].events = POLLIN;
 
-    while (_socket_fd != -1)
-    {
-        // Wait for events on any of the sockets
-        int poll_fd = poll(&pollArray[0], pollArray.size(), -1);
-        if (poll_fd == -1)
-            throw std::logic_error("Error: The poll failed!");
-
-        std::cout << " -> " << poll_fd << std::endl;
-
         // Check if the server socket is ready (new connection)
         if (pollArray[0].revents & POLLIN)
         {
