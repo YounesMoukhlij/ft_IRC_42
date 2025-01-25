@@ -60,7 +60,7 @@ void Server::ServerConnection()
     server_poll.fd = _socket_fd;
     server_poll.events = POLLIN;
     pollArray.push_back(server_poll);
-
+    int j = 0;
     while (_socket_fd != -1)
     {
         // Wait for events
@@ -82,8 +82,8 @@ void Server::ServerConnection()
             // Add the client socket to the poll array to read data from it
             client_poll.fd = _client_fd;
             client_poll.events = POLLIN;
-            pollArray.push_back(client_poll); // ADD client to the container 
-            int j
+            pollArray.push_back(client_poll); // ADD client to the container, we dont forget that the server is on pollArray[0]
+            j++;
             std::cout << "\n  ~~~ Connection Established. ~~~" << std::endl;
             std::cout << "\n  ~~~ Client : [" << j << "]" << std::endl;
         }
