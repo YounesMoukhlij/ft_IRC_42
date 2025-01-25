@@ -36,9 +36,6 @@ void    Server::startServer()
 
     std::cout << "Server is listening on port : "<< _port << std::endl << "\n \t Waiting ... "<< std::endl;
 
-    if (accept(_socket_fd, NULL, NULL) == -1)
-        throw (std::logic_error("Error: Socket accept failed!"));
-    std::cout << " ~~~ BOYAAH Client connected! ~~~" << std::endl;
 
 
 }
